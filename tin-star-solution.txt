@@ -1,0 +1,142 @@
+Tin Star, release 2
+By Gianluca Girelli and Garry Francis
+For Z-code interpreters
+
+Solution by Garry Francis
+----------------------------------------
+This is a minimal solution. You'll need to EXAMINE lots of things for this solution to make sense. Some optional (but significant) commands are shown in parentheses. These can be omitted once you know what to do.
+
+(X HORSE) (he's your faithful stallion)
+(X ROPE) (it's a long rope that ties you up)
+(GET IT) (you can't get anything while you're tied up)
+(X CAMPFIRE) (coals are still warm)
+BLOW ON COALS (flame lights up)
+BURN ROPE (you burn it enough to free yourself)
+GET IT
+TIE IT TO HORSE (he will now follow you when you're holding the rope)
+GET BLANKET
+(X IT) (can be used to make smoke signals)
+W (your horse follows you, as you're holding the rope)
+W
+W
+X CARCASS (you find a saddle bag)
+GET SADDLE BAG
+N
+N (your horse spots the water and drinks its fill, he'll now let you mount)
+DRINK WATER (your own thirst is quenched)
+(MOUNT HORSE) (you're too weak, you need to eat something)
+OPEN SADDLE BAG (it contains some pemmican and an empty canteen)
+GET CANTEEN
+(OPEN IT)
+FILL IT WITH WATER (you'll need it later)
+(CLOSE IT)
+GET PEMMICAN
+EAT IT (you feel your strength coming back, you can now mount your horse)
+DROP SADDLE BAG
+W
+E
+(X WAGON) (it might be worth searching it)
+SEARCH WAGON (you find a stick of dynamite)
+GET DYNAMITE
+(X IT) (it's got a long fuse)
+(X FUSE) (you reckon it would burn for three moves before dynamite blows up)
+S
+(S) (it's too far to walk on foot)
+MOUNT HORSE
+S
+S
+GET BRANCH
+W
+S
+(D) (you can't take the horse into the crevasse)
+DISMOUNT
+DROP ROPE
+D
+GET HEADDRESS
+U
+N
+E
+S
+(X INDIAN)
+(TALK TO HIM) (ask him about something specific)
+(ASK HIM ABOUT APACHES, BANDITS, HEADDRESS, HIMSELF, KNIFE, ME, NAVAJO, SMOKE)
+(SHOW HEADDRESS TO INDIAN) (it's his, he lost it and couldn't find it)
+GIVE HEADDRESS TO INDIAN (he gives you a knife in return)
+LIGHT BRANCH
+N
+W
+S
+E
+(EXAMINE MAN) (he's tied to stake by leather ties)
+(X STAKE) (it's buried in ground, man is bound to it by leather ties)
+(X TIES) (they're wet leather that shrinks as it dries out)
+CUT TIES WITH KNIFE (ties fall to ground, but you need to revive man)
+REVIVE MAN (he sees that you're a sheriff, but unarmed, so gives you his rifle)
+(ASK MAN ABOUT APACHES, BANDITS, INTRUDERS, HIMSELF, INDIANS, ME, NAVAJO, SMOKE)
+GET BRANCHES
+W
+GET ROPE
+N (horse follows you)
+E
+E
+(S) (it's too far to go on foot)
+MOUNT HORSE
+S
+S
+(U) (you can't get past the rattlesnake)
+SHOOT SNAKE WITH RIFLE (you can now get past)
+U
+(E)
+(N) (you can't take your horse across the rope bridge)
+(DISMOUNT)
+(DROP ROPE)
+(N)
+(N)
+(N) (the Apaches won't let you pass, you need to somehow send them away)
+(S)
+(S)
+(W)
+DISMOUNT (if you didn't do it earlier)
+DROP BRANCHES
+LIGHT THEM WITH TORCH
+MAKE SMOKE SIGNALS WITH BLANKET (the distant Apaches ride away)
+E
+DROP ROPE (if you didn't do it earlier)
+N
+N (Apaches are now gone)
+N
+(X HOLE) (it's about the size of a candle)
+PUT DYNAMITE IN HOLE
+LIGHT IT WITH TORCH (get out of here before it blows up)
+S
+Z
+Z (Kaboom!)
+N (there's a large hole in the mountain)
+N
+N
+N
+N
+GET HATCHET (the dripping water douses your torch)
+S
+E (you can now see cracks of light in the darkness)
+(X CRACKS) (another entrance has been boarded up from the outside)
+CHOP BOARDS WITH HATCHET (you reveal another entrance to south)
+S
+(X BRIDGE) (it's been chopped down by the bandits)
+CHOP TREE WITH HATCHET (tree falls across ravine to form makeshift bridge)
+S
+S
+E
+N
+N (you must have your rifle with you)
+Z
+Z
+Z (you hear horses approaching)
+Z (horses arrive)
+(Z) (men dismount to water horses, it's the bandits)
+(Z) (they look like Mexicans, they're talking in Spanish)
+(Z) (they're joking about their carnage)
+(Z) (time to hand out some justice)
+(Z) (they're almost ready to leave)
+SHOOT BANDITS
+***THE END***

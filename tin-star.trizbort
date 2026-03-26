@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trizbort version="1.5.9.3">
+	<info>
+		<title>Tin Star</title>
+		<author>Gianluca Girelli and Garry Francis</author>
+	</info>
+	<map>
+		<room id="4" name="Desert" subtitle="" x="-160" y="-160" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert</objects>
+		</room>
+		<room id="7" name="Desert" subtitle="" x="-40" y="-80" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert|Overturned wagon|(Stick of dynamite)|(Fuse)</objects>
+		</room>
+		<room id="9" name="Desert" subtitle="" x="220" y="-80" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert</objects>
+		</room>
+		<room id="11" name="Desert" subtitle="" x="100" y="-80" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert|Carcass of horse|(Saddle bag)|(Pemmican)|(Canteen)|(Water)</objects>
+		</room>
+		<room id="15" name="Desert" subtitle="" x="100" y="0" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert</objects>
+		</room>
+		<room id="92" name="Tin Star (Gianluca Girelli and Garry Francis)" subtitle="" x="-280" y="-380" w="820" h="40" region="NoRegion" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="None" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="41" name="Desert" subtitle="" x="220" y="-240" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert|Basin of water|Water|Tufts of grass</objects>
+		</room>
+		<room id="42" name="Desert" subtitle="" x="340" y="-320" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert</objects>
+		</room>
+		<room id="49" name="Desert" subtitle="" x="220" y="-160" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert</objects>
+		</room>
+		<room id="60" name="Desert" subtitle="" x="340" y="-80" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert</objects>
+		</room>
+		<room id="64" name="Sierra Sedona" subtitle="" x="-160" y="240" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Sierra Sedona</objects>
+		</room>
+		<room id="65" name="Desert" subtitle="" x="-160" y="0" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Desert</objects>
+		</room>
+		<room id="66" name="Foot of Mtn Range" subtitle="" x="-280" y="320" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mountain range|Sierra Sedona</objects>
+		</room>
+		<room id="67" name="Sierra Sedona" subtitle="" x="-160" y="320" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Sierra Sedona|Grassy plain|Mountain range|Dead tree|Large branch|(Torch)</objects>
+		</room>
+		<room id="68" name="Grassy Plain" subtitle="" x="-40" y="320" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Grassy plain</objects>
+		</room>
+		<room id="69" name="South Edge of Chasm" subtitle="" x="80" y="640" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Chasm|Rapids|Rope bridge</objects>
+		</room>
+		<room id="71" name="In Front of Teepee" subtitle="" x="-160" y="400" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mountain range|Barren pocket of land|Tufts of grass|Teepee|Small fire|Old Indian|(Navajo knife)</objects>
+		</room>
+		<room id="72" name="Grassy Plain" subtitle="" x="-40" y="480" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Grassy plain</objects>
+		</room>
+		<room id="75" name="Mining Tunnel" subtitle="" x="200" y="80" w="80" h="40" region="Dark" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mining tunnel|Navajo hatchet</objects>
+		</room>
+		<room id="76" name="Edge of Crevasse" subtitle="" x="-280" y="480" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mountain range|Deep crevasse|Steep path</objects>
+		</room>
+		<room id="77" name="Sandy Terrain" subtitle="" x="-160" y="480" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mountain range|Sandy terrain|Dead branches|Man|Stake|Ties|Winchester rifle</objects>
+		</room>
+		<room id="78" name="Rocky Path" subtitle="" x="-40" y="560" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Grassy plain|Rocky path|Rattlesnake</objects>
+		</room>
+		<room id="81" name="Mining Tunnel" subtitle="" x="200" y="160" w="80" h="40" region="Dark" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mining tunnel</objects>
+		</room>
+		<room id="85" name="Narrow Canyon" subtitle="" x="460" y="-80" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" isDark="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">(Clothes)|(Tin star)|Canyon|Rock walls|Horse|Rope|(Tied rope)|(End of rope)|Remains of a campfire|Coals|Old blanket</objects>
+		</room>
+		<line id="100">
+			<point index="0" x="260" y="-300" />
+			<dock index="1" id="42" port="w" />
+		</line>
+		<line id="110">
+			<dock index="0" id="9" port="e" />
+			<dock index="1" id="60" port="w" />
+		</line>
+		<line id="111" style="dashed">
+			<dock index="0" id="60" port="e" />
+			<dock index="1" id="85" port="w" />
+		</line>
+		<line id="113" style="dashed">
+			<dock index="0" id="64" port="n" />
+			<dock index="1" id="65" port="s" />
+		</line>
+		<line id="117">
+			<dock index="0" id="66" port="e" />
+			<dock index="1" id="67" port="w" />
+		</line>
+		<line id="118">
+			<dock index="0" id="67" port="e" />
+			<dock index="1" id="68" port="w" />
+		</line>
+		<line id="131">
+			<dock index="0" id="64" port="s" />
+			<dock index="1" id="67" port="n" />
+		</line>
+		<line id="132">
+			<dock index="0" id="67" port="s" />
+			<dock index="1" id="71" port="n" />
+		</line>
+		<line id="135" style="dashed">
+			<dock index="0" id="68" port="s" />
+			<dock index="1" id="72" port="n" />
+		</line>
+		<line id="142">
+			<dock index="0" id="41" port="s" />
+			<dock index="1" id="49" port="n" />
+		</line>
+		<line id="143">
+			<dock index="0" id="49" port="s" />
+			<dock index="1" id="9" port="n" />
+		</line>
+		<line id="183">
+			<dock index="0" id="75" port="s" />
+			<dock index="1" id="81" port="n" />
+		</line>
+		<line id="190">
+			<dock index="0" id="72" port="s" />
+			<dock index="1" id="78" port="n" />
+		</line>
+		<line id="193">
+			<dock index="0" id="76" port="e" />
+			<dock index="1" id="77" port="w" />
+		</line>
+		<room id="195" name="Mining Tunnel" subtitle="" x="80" y="240" w="80" h="40" region="Dark" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mining tunnel</objects>
+		</room>
+		<room id="196" name="North Side of Gorge" subtitle="" x="320" y="320" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Gorge|Destroyed bridge|Cluster of trees|(Log)</objects>
+		</room>
+		<room id="197" name="Inside Old Building" subtitle="" x="440" y="320" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Old building|Small fire|Smoke|Rotten beams|Window|(Bandits)</objects>
+		</room>
+		<room id="201" name="Abandoned Pueblo" subtitle="" x="440" y="400" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Abandoned pueblo|Building|Footprints|Hoofprints|Hitching rails|Watering trough</objects>
+		</room>
+		<room id="207" name="Bottom of Crevasse" subtitle="" x="-280" y="560" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Deep crevasse|Steep path|Rocks|Grass|Navajo headdress</objects>
+		</room>
+		<room id="209" name="Vast Plateau" subtitle="" x="-40" y="640" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Rocky path|Plateau|(Makeshift fire)|(Smoke)</objects>
+		</room>
+		<room id="214" name="Large Gash in Tunnel" subtitle="" x="80" y="320" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Large gash</objects>
+		</room>
+		<room id="216" name="South Side of Gorge" subtitle="" x="320" y="400" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Gorge|(Log)|Rocks</objects>
+		</room>
+		<room id="220" name="End of Plateau" subtitle="" x="80" y="400" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Plateau|Landslide|Mine|Small hole|(Large hole in the mountain wall)|(Debris)</objects>
+		</room>
+		<room id="222" name="Clearing in Rocky Area" subtitle="" x="320" y="480" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Small fire|Rocky area|Clearing|Footprints</objects>
+		</room>
+		<room id="223" name="Road to Pueblo" subtitle="" x="440" y="480" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Road|Pueblo|Hoofprints</objects>
+		</room>
+		<line id="225" style="dashed" startText="D" endText="U">
+			<dock index="0" id="76" port="s" />
+			<dock index="1" id="207" port="n" />
+		</line>
+		<line id="246" style="dashed" startText="S,OUT" endText="IN">
+			<dock index="0" id="20" port="s" />
+			<dock index="1" id="196" port="n" />
+		</line>
+		<line id="238" style="dashed" startText="S,OUT" endText="N,IN">
+			<dock index="0" id="214" port="s" />
+			<dock index="1" id="220" port="n" />
+		</line>
+		<line id="247" style="dashed" startText="CROSS">
+			<dock index="0" id="196" port="s" />
+			<dock index="1" id="216" port="n" />
+		</line>
+		<line id="249">
+			<dock index="0" id="216" port="s" />
+			<dock index="1" id="222" port="n" />
+		</line>
+		<line id="250" style="dashed" flow="oneWay" startText="IN">
+			<dock index="0" id="201" port="n" />
+			<dock index="1" id="197" port="s" />
+		</line>
+		<line id="251">
+			<dock index="0" id="201" port="s" />
+			<dock index="1" id="223" port="n" />
+		</line>
+		<line id="270">
+			<dock index="0" id="222" port="e" />
+			<dock index="1" id="223" port="w" />
+		</line>
+		<room id="348" name="Large Plateau" subtitle="" x="80" y="480" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Chasm|Rapids|Rope bridge|Plateau|Mescalero Apaches</objects>
+		</room>
+		<room id="365" name="Rope Bridge" subtitle="" x="80" y="560" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Chasm|Rapids|Rope bridge</objects>
+		</room>
+		<line id="372" style="dashed">
+			<dock index="0" id="220" port="s" />
+			<dock index="1" id="348" port="n" />
+		</line>
+		<line id="384">
+			<dock index="0" id="348" port="s" />
+			<dock index="1" id="365" port="n" />
+		</line>
+		<room id="231" name="Copyright © Garry Francis 2025" subtitle="" x="360" y="640" w="180" h="40" region="NoRegion" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="None" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="232" name="Legend" subtitle="" x="-280" y="-340" w="80" h="40" region="NoRegion" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="0" cornerTopRight="0" cornerBottomLeft="0" cornerBottomRight="0" borderstyle="None" description="" roomFill="#FFFFFF" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="240" name="Start Room" subtitle="" x="-280" y="-300" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="0" cornerTopRight="0" cornerBottomLeft="0" cornerBottomRight="0" borderstyle="Solid" isDark="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="241" name="Normal Room" subtitle="" x="-280" y="-240" w="80" h="40" region="Normal" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="0" cornerTopRight="0" cornerBottomLeft="0" cornerBottomRight="0" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<room id="286" name="Horse Can Go" subtitle="" x="-280" y="-180" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<line id="70">
+			<dock index="0" id="66" port="s" />
+			<dock index="1" id="76" port="n" />
+		</line>
+		<line id="6" flow="oneWay">
+			<dock index="0" id="15" port="s" />
+			<dock index="1" id="15" port="ssw" />
+		</line>
+		<line id="8">
+			<dock index="0" id="49" port="w" />
+			<point index="1" x="140" y="-140" />
+		</line>
+		<line id="12">
+			<point index="0" x="260" y="20" />
+			<dock index="1" id="15" port="e" />
+		</line>
+		<line id="14">
+			<dock index="0" id="11" port="s" />
+			<dock index="1" id="15" port="n" />
+		</line>
+		<line id="10">
+			<point index="0" x="0" y="20" />
+			<dock index="1" id="65" port="e" />
+		</line>
+		<line id="16">
+			<dock index="0" id="7" port="w" />
+			<point index="1" x="-120" y="-60" />
+		</line>
+		<line id="29" flow="oneWay">
+			<dock index="0" id="7" port="ene" />
+			<dock index="1" id="7" port="ese" />
+		</line>
+		<line id="30" flow="oneWay">
+			<dock index="0" id="4" port="s" />
+			<dock index="1" id="4" port="ssw" />
+		</line>
+		<line id="2">
+			<dock index="0" id="4" port="w" />
+			<dock index="1" id="65" port="w" />
+		</line>
+		<line id="1">
+			<dock index="0" id="41" port="w" />
+			<point index="1" x="-120" y="-220" />
+		</line>
+		<line id="5">
+			<dock index="0" id="4" port="e" />
+			<point index="1" x="0" y="-140" />
+		</line>
+		<line id="26">
+			<dock index="0" id="9" port="w" />
+			<dock index="1" id="11" port="e" />
+		</line>
+		<line id="13">
+			<dock index="0" id="42" port="s" />
+			<point index="1" x="380" y="-220" />
+		</line>
+		<line id="27" flow="oneWay">
+			<dock index="0" id="42" port="n" />
+			<dock index="1" id="42" port="nnw" />
+		</line>
+		<line id="28">
+			<dock index="0" id="42" port="e" />
+			<point index="1" x="440" y="-140" />
+		</line>
+		<line id="31" flow="oneWay">
+			<dock index="0" id="60" port="n" />
+			<dock index="1" id="60" port="nnw" />
+		</line>
+		<line id="32" flow="oneWay">
+			<dock index="0" id="60" port="s" />
+			<dock index="1" id="60" port="ssw" />
+		</line>
+		<line id="34">
+			<dock index="0" id="49" port="e" />
+			<point index="1" x="440" y="-140" />
+		</line>
+		<line id="35">
+			<dock index="0" id="41" port="e" />
+			<point index="1" x="380" y="-220" />
+		</line>
+		<line id="36">
+			<dock index="0" id="41" port="n" />
+			<point index="1" x="260" y="-300" />
+		</line>
+		<line id="37">
+			<dock index="0" id="4" port="n" />
+			<point index="1" x="-120" y="-220" />
+		</line>
+		<line id="38">
+			<dock index="0" id="7" port="n" />
+			<point index="1" x="0" y="-140" />
+		</line>
+		<line id="39">
+			<dock index="0" id="65" port="n" />
+			<point index="1" x="-120" y="-60" />
+		</line>
+		<line id="40">
+			<dock index="0" id="7" port="s" />
+			<point index="1" x="0" y="20" />
+		</line>
+		<line id="43">
+			<dock index="0" id="11" port="n" />
+			<point index="1" x="140" y="-140" />
+		</line>
+		<line id="44">
+			<dock index="0" id="11" port="w" />
+			<dock index="1" id="15" port="w" />
+		</line>
+		<line id="48">
+			<dock index="0" id="81" port="w" />
+			<point index="1" x="120" y="180" />
+		</line>
+		<line id="56" style="dashed">
+			<dock index="0" id="365" port="s" />
+			<dock index="1" id="69" port="n" />
+		</line>
+		<line id="58">
+			<dock index="0" id="209" port="e" />
+			<dock index="1" id="69" port="w" />
+		</line>
+		<line id="59" style="dashed" startText="U" endText="D">
+			<dock index="0" id="78" port="s" />
+			<dock index="1" id="209" port="n" />
+		</line>
+		<line id="19">
+			<dock index="0" id="195" port="n" />
+			<point index="1" x="120" y="180" />
+		</line>
+		<line id="3">
+			<dock index="0" id="9" port="s" />
+			<point index="1" x="260" y="20" />
+		</line>
+		<room id="20" name="Mining Tunnel" subtitle="" x="320" y="240" w="80" h="40" region="Dark" handDrawn="no" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mining tunnel|Boards</objects>
+		</room>
+		<line id="21">
+			<dock index="0" id="81" port="e" />
+			<point index="1" x="360" y="180" />
+		</line>
+		<line id="22" flow="oneWay">
+			<dock index="0" id="195" port="ene" />
+			<dock index="1" id="195" port="ese" />
+		</line>
+		<line id="23" flow="oneWay">
+			<dock index="0" id="20" port="wnw" />
+			<dock index="1" id="20" port="wsw" />
+		</line>
+		<line id="24">
+			<dock index="0" id="20" port="n" />
+			<point index="1" x="360" y="180" />
+		</line>
+		<line id="17">
+			<dock index="0" id="195" port="s" />
+			<dock index="1" id="214" port="n" />
+		</line>
+		<room id="18" name="Dark Room" subtitle="" x="-280" y="-120" w="80" h="40" region="Dark" handDrawn="no" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="0" cornerTopRight="0" cornerBottomLeft="0" cornerBottomRight="0" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw" />
+		</room>
+		<line id="25" flow="oneWay">
+			<dock index="0" id="195" port="wnw" />
+			<dock index="1" id="195" port="wsw" />
+		</line>
+		<line id="33" flow="oneWay">
+			<dock index="0" id="20" port="ene" />
+			<dock index="1" id="20" port="ese" />
+		</line>
+		<line id="45" flow="oneWay">
+			<dock index="0" id="81" port="s" />
+			<dock index="1" id="81" port="ssw" />
+		</line>
+	</map>
+	<settings>
+		<colors>
+			<canvas>White</canvas>
+			<fill>#FFFF99</fill>
+			<border>Black</border>
+			<line>Black</line>
+			<selectedLine>Gold</selectedLine>
+			<hoverLine>DarkOrange</hoverLine>
+			<largeText>Black</largeText>
+			<smallText>Black</smallText>
+			<lineText>Black</lineText>
+			<grid>#F5F5F5</grid>
+		</colors>
+		<regions>
+			<Dark Name="Dark" TextColor="Black">Silver</Dark>
+			<Dead Name="Dead" TextColor="White">Red</Dead>
+			<Horse Name="Horse" TextColor="Black">#FF8080</Horse>
+			<NoRegion Name="NoRegion" TextColor="Black">White</NoRegion>
+			<Normal Name="Normal" TextColor="Black">#FFFF80</Normal>
+		</regions>
+		<fonts>
+			<room size="12">Arial</room>
+			<object size="12">Arial Narrow</object>
+			<line size="12">Arial Narrow</line>
+		</fonts>
+		<grid>
+			<snapTo>yes</snapTo>
+			<visible>yes</visible>
+			<showOrigin>yes</showOrigin>
+			<size>20</size>
+		</grid>
+		<lines>
+			<width>1</width>
+			<handDrawn>no</handDrawn>
+			<arrowSize>8</arrowSize>
+			<textOffset>4</textOffset>
+		</lines>
+		<rooms>
+			<darknessStripeSize>10</darknessStripeSize>
+			<objectListOffset>4</objectListOffset>
+			<connectionStalkLength>20</connectionStalkLength>
+			<preferredDistanceBetweenRooms>40</preferredDistanceBetweenRooms>
+			<defaultRoomName>Cave</defaultRoomName>
+		</rooms>
+		<ui>
+			<handleSize>8</handleSize>
+			<snapToElementSize>8</snapToElementSize>
+		</ui>
+		<keypadNavigation>
+			<creationModifier>control</creationModifier>
+			<unexploredModifier>alt</unexploredModifier>
+		</keypadNavigation>
+	</settings>
+</trizbort>
