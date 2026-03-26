@@ -21,3 +21,5 @@ This is a traditional text adventure that was written for The BDB Project. The g
 Release 1 was compiled with Inform 6 version 6.42 and the PunyInform library version 5.14. This was released for [ParserComp 2025](https://itch.io/jam/parsercomp-2025), but this was an accidental release of an earlier development version.
 
 Release 2 was compiled with Inform 6 version 6.42 and the PunyInform library version 5.14.1. This was the corrected version for ParserComp 2025.
+
+Release 3 was compiled with Inform 6 version 6.44 and the PunyInform library version 6.0.2. This was a post-comp release to account for feedback from ParserComp and changes in the PunyInform library. It also included many small enhancements, such as string and code optimisation, some extra responses to actions, minor rewording, additional hints and changes to spelling for 'barbecue', 'tipi' and 'hoof prints'. There were no changes to puzzles.
