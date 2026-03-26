@@ -53,8 +53,8 @@
 		<room id="69" name="South Edge of Chasm" subtitle="" x="80" y="640" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
 			<objects at="wsw">Chasm|Rapids|Rope bridge</objects>
 		</room>
-		<room id="71" name="In Front of Teepee" subtitle="" x="-160" y="400" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
-			<objects at="wsw">Mountain range|Barren pocket of land|Tufts of grass|Teepee|Small fire|Old Indian|(Navajo knife)</objects>
+		<room id="71" name="In Front of Tipi" subtitle="" x="-160" y="400" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
+			<objects at="wsw">Mountain range|Barren pocket of land|Tufts of grass|Tipi|Small fire|Old Indian|(Navajo knife)</objects>
 		</room>
 		<room id="72" name="Grassy Plain" subtitle="" x="-40" y="480" w="80" h="40" region="Horse" handDrawn="no" allcornersequal="no" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="1" cornerTopRight="1" cornerBottomLeft="1" cornerBottomRight="1" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="">
 			<objects at="wsw">Grassy plain</objects>
@@ -170,7 +170,7 @@
 			<dock index="0" id="76" port="s" />
 			<dock index="1" id="207" port="n" />
 		</line>
-		<line id="246" style="dashed" startText="S,OUT" endText="IN">
+		<line id="246" style="dashed" startText="S,OUT" endText="N,IN">
 			<dock index="0" id="20" port="s" />
 			<dock index="1" id="196" port="n" />
 		</line>
@@ -178,7 +178,7 @@
 			<dock index="0" id="214" port="s" />
 			<dock index="1" id="220" port="n" />
 		</line>
-		<line id="247" style="dashed" startText="CROSS">
+		<line id="247" style="dashed">
 			<dock index="0" id="196" port="s" />
 			<dock index="1" id="216" port="n" />
 		</line>

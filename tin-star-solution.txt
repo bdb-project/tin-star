@@ -1,10 +1,18 @@
-Tin Star, release 2
-By Gianluca Girelli and Garry Francis
+Tin Star, release 3
+By Gianluca Girelli & Garry Francis
 For Z-code interpreters
 
 Solution by Garry Francis
 ----------------------------------------
 This is a minimal solution. You'll need to EXAMINE lots of things for this solution to make sense. Some optional (but significant) commands are shown in parentheses. These can be omitted once you know what to do.
+
+The game starts in a desert. You can map this using the conventional method of dropping items in rooms to make them unique. You can acquire a few items from the starting location and you can find some more nearby. However, a thirst daemon starts when you leave your starting location and you die of thirst after 20 moves, so your first priority should be to find water, then map the rest of the desert.
+
+You will need to ride your horse to cross long distances, but your horse won't let you mount until his thirst has been quenched and you can't mount him until you've eaten something to replenish your energy, so these are your next priorities.
+
+You can find a couple of non-player characters along the way, so ask them about things of interest and anything significant that they mention for some important clues.
+
+There is a HINT command, but only use this if you're desperate. You shouldn't need it, as everything you need is clued within the game.
 
 (X HORSE) (he's your faithful stallion)
 (X ROPE) (it's a long rope that ties you up)
@@ -12,7 +20,6 @@ This is a minimal solution. You'll need to EXAMINE lots of things for this solut
 (X CAMPFIRE) (coals are still warm)
 BLOW ON COALS (flame lights up)
 BURN ROPE (you burn it enough to free yourself)
-GET IT
 TIE IT TO HORSE (he will now follow you when you're holding the rope)
 GET BLANKET
 (X IT) (can be used to make smoke signals)
@@ -26,25 +33,25 @@ N (your horse spots the water and drinks its fill, he'll now let you mount)
 DRINK WATER (your own thirst is quenched)
 (MOUNT HORSE) (you're too weak, you need to eat something)
 OPEN SADDLE BAG (it contains some pemmican and an empty canteen)
-GET CANTEEN
-(OPEN IT)
-FILL IT WITH WATER (you'll need it later)
-(CLOSE IT)
 GET PEMMICAN
 EAT IT (you feel your strength coming back, you can now mount your horse)
-DROP SADDLE BAG
+GET CANTEEN
+(X IT) (it's closed)
+(OPEN IT)
+FILL IT WITH WATER (you'll need it later)
+(DROP SADDLE BAG)
 W
 E
 (X WAGON) (it might be worth searching it)
 SEARCH WAGON (you find a stick of dynamite)
 GET DYNAMITE
 (X IT) (it's got a long fuse)
-(X FUSE) (you reckon it would burn for three moves before dynamite blows up)
+(X FUSE) (you reckon it would burn for three moves before the dynamite blows up)
 S
 (S) (it's too far to walk on foot)
 MOUNT HORSE
 S
-S
+S (you see a dead tree with a large branch)
 GET BRANCH
 W
 S
@@ -53,6 +60,7 @@ DISMOUNT
 DROP ROPE
 D
 GET HEADDRESS
+(X IT) (it surely belongs to a chief)
 U
 N
 E
@@ -67,7 +75,7 @@ N
 W
 S
 E
-(EXAMINE MAN) (he's tied to stake by leather ties)
+(X MAN) (he's tied to the stake by leather ties)
 (X STAKE) (it's buried in ground, man is bound to it by leather ties)
 (X TIES) (they're wet leather that shrinks as it dries out)
 CUT TIES WITH KNIFE (ties fall to ground, but you need to revive man)
@@ -132,11 +140,11 @@ N (you must have your rifle with you)
 Z
 Z
 Z (you hear horses approaching)
-Z (horses arrive)
-(Z) (men dismount to water horses, it's the bandits)
+Z (horses arrive in a cloud of dust)
+(Z) (men dismount to water their horses, it's the bandits)
 (Z) (they look like Mexicans, they're talking in Spanish)
 (Z) (they're joking about their carnage)
 (Z) (time to hand out some justice)
 (Z) (they're almost ready to leave)
-SHOOT BANDITS
+SHOOT BANDITS WITH RIFLE
 ***THE END***

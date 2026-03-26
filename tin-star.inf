@@ -1,110 +1,112 @@
 !% -~S
 !% $OMIT_UNUSED_ROUTINES=1
+!% $ZCODE_COMPACT_GLOBALS=1
 !% $ZCODE_LESS_DICT_DATA=1
+!% $ZCODE_MAX_INLINE_STRING=9999
 !% $MAX_ABBREVS=96
 !========================================
 ! Tin Star
 ! Kenneth Johnson trilogy #2
-! Copyright © 2025 Gianluca Girelli & Garry Francis
+! Copyright © 2025 Gianluca Girelli and Garry Francis
 !========================================
 !Constant DEBUG;
 
-Abbreviate "Mescalero Apache";              !     8x18, saved   110
-Abbreviate "You'll have to ";               !    14x17, saved   192
+Abbreviate "Mescalero Apaches";             !     8x19, saved   115
 Abbreviate " smoke signals";                !    17x14, saved   189
 Abbreviate "Sierra Sedona";                 !     9x15, saved   102
 Abbreviate " to the north";                 !    24x13, saved   249
 Abbreviate "grassy plain";                  !    12x12, saved   108
-Abbreviate " looks like ";                  !    14x12, saved   128
-Abbreviate " your horse";                   !    30x11, saved   258
-Abbreviate "You can't ";                    !    40x12, saved   388
-Abbreviate " nothing ";                     !    19x 9, saved   124
+Abbreviate " looks like";                   !    12x11, saved    96
+Abbreviate " your horse";                   !    29x11, saved   249
+Abbreviate "You can't ";                    !    37x12, saved   358
 Abbreviate "direction";                     !    15x 9, saved    96
-Abbreviate " anything";                     !    20x 9, saved   131
-Abbreviate " you're ";                      !    29x 9, saved   194
-Abbreviate "entrance";                      !    17x 8, saved    93
 Abbreviate " through";                      !    16x 8, saved    87
-Abbreviate " in the ";                      !    44x 8, saved   255
-Abbreviate "already ";                      !    23x 8, saved   129
-Abbreviate "dynamite";                      !    14x 8, saved    75
-Abbreviate "need to ";                      !    24x 8, saved   135
+Abbreviate "entrance";                      !    15x 8, saved    81
+Abbreviate " you're ";                      !    28x 9, saved   187
 Abbreviate "mountain";                      !    13x 8, saved    69
-Abbreviate " better ";                      !    14x 8, saved    75
+Abbreviate "already ";                      !    22x 8, saved   123
+Abbreviate "need to ";                      !    24x 8, saved   135
+Abbreviate "dynamite";                      !    13x 8, saved    69
+Abbreviate " to the ";                      !    66x 8, saved   387
 Abbreviate "yourself";                      !    14x 8, saved    75
-Abbreviate " to the ";                      !    67x 8, saved   393
-Abbreviate " to make";                      !    13x 8, saved    69
-Abbreviate " of the ";                      !    71x 8, saved   417
-Abbreviate "Apaches";                       !    14x 8, saved    75
-Abbreviate " Indian";                       !    13x 8, saved    69
+Abbreviate " of the ";                      !    73x 8, saved   429
 Abbreviate "canteen";                       !    19x 7, saved    86
+Abbreviate " branch";                       !    15x 7, saved    66
 Abbreviate "bandits";                       !    52x 7, saved   251
+Abbreviate "It's a ";                       !    26x 9, saved   173
+Abbreviate " Apache";                       !    15x 8, saved    81
 Abbreviate "plateau";                       !    25x 7, saved   116
-Abbreviate " bridge";                       !    19x 7, saved    86
-Abbreviate " branch";                       !    17x 7, saved    76
-Abbreviate " your ";                        !    44x 6, saved   170
+Abbreviate " your ";                        !    45x 6, saved   174
+Abbreviate "prints";                        !    17x 6, saved    62
+Abbreviate "bridge";                        !    19x 6, saved    70
 Abbreviate " this ";                        !    26x 6, saved    98
+Abbreviate " about";                        !    16x 6, saved    58
+Abbreviate "Indian";                        !    13x 7, saved    56
 Abbreviate ". You ";                        !    37x 8, saved   213
-Abbreviate "prints";                        !    19x 6, saved    70
-Abbreviate " water";                        !    41x 6, saved   158
-Abbreviate " and ";                         !   107x 5, saved   315
-Abbreviate " that";                         !   110x 5, saved   324
-Abbreviate " with";                         !    52x 5, saved   150
-Abbreviate "south";                         !    37x 5, saved   105
-Abbreviate " you ";                         !   187x 5, saved   555
-Abbreviate "It's ";                         !    47x 7, saved   226
-Abbreviate "esert";                         !    38x 5, saved   108
-Abbreviate ", but";                         !    48x 6, saved   186
-Abbreviate "ould ";                         !    39x 5, saved   111
-Abbreviate "ther ";                         !    34x 5, saved    96
-Abbreviate " from";                         !    48x 5, saved   138
+Abbreviate " and ";                         !   111x 5, saved   327
+Abbreviate " that";                         !   105x 5, saved   309
+Abbreviate "thing";                         !    82x 5, saved   240
+Abbreviate "south";                         !    35x 5, saved    99
+Abbreviate "esert";                         !    37x 5, saved   105
+Abbreviate ", but";                         !    45x 6, saved   174
+Abbreviate "water";                         !    42x 5, saved   120
+Abbreviate " with";                         !    48x 5, saved   138
+Abbreviate "ould ";                         !    38x 5, saved   108
 Abbreviate ". The";                         !    61x 7, saved   296
-Abbreviate " the ";                         !   368x 5, saved  1098
-Abbreviate " for ";                         !    30x 5, saved    84
-Abbreviate " head";                         !    29x 5, saved    81
-Abbreviate " down";                         !    27x 5, saved    75
+Abbreviate " you ";                         !   179x 5, saved   531
+Abbreviate " from";                         !    45x 5, saved   129
+Abbreviate " the ";                         !   402x 5, saved  1200
+Abbreviate " down";                         !    26x 5, saved    72
+Abbreviate " head";                         !    28x 5, saved    78
+Abbreviate " for ";                         !    34x 5, saved    96
+Abbreviate " some";                         !    33x 5, saved    93
 Abbreviate "This ";                         !    24x 6, saved    90
-Abbreviate " are ";                         !    42x 5, saved   120
-Abbreviate " of ";                          !   135x 4, saved   264
-Abbreviate " the";                          !   113x 4, saved   220
-Abbreviate "here";                          !    95x 4, saved   184
-Abbreviate "You'";                          !    57x 6, saved   222
-Abbreviate "ound";                          !    48x 4, saved    90
-Abbreviate "some";                          !    37x 4, saved    68
+Abbreviate " are ";                         !    43x 5, saved   123
+Abbreviate "ther ";                         !    33x 5, saved    93
+Abbreviate ", so";                          !    38x 5, saved   108
+Abbreviate "his ";                          !    17x 4, saved    28
+Abbreviate "here";                          !    93x 4, saved   180
 Abbreviate "not ";                          !    33x 4, saved    60
-Abbreviate "The ";                          !    80x 5, saved   234
-Abbreviate "n't ";                          !    93x 5, saved   273
-Abbreviate "ing ";                          !   156x 4, saved   306
-Abbreviate " to ";                          !   199x 4, saved   392
-Abbreviate "You ";                          !   115x 5, saved   339
-Abbreviate " you";                          !    62x 4, saved   118
-Abbreviate " is ";                          !    81x 4, saved   156
 Abbreviate "rock";                          !    31x 4, saved    56
-Abbreviate "have";                          !    44x 4, saved    82
-Abbreviate "ight";                          !    46x 4, saved    86
-Abbreviate "can ";                          !    59x 4, saved   112
-Abbreviate ", so";                          !    42x 5, saved   120
+Abbreviate "You'";                          !    65x 6, saved   254
+Abbreviate " is ";                          !    84x 4, saved   162
+Abbreviate " of ";                          !   142x 4, saved   278
+Abbreviate "east";                          !    30x 4, saved    54
+Abbreviate "The ";                          !    80x 5, saved   234
+Abbreviate " the";                          !    84x 4, saved   162
+Abbreviate "can ";                          !    57x 4, saved   108
+Abbreviate " it ";                          !    42x 4, saved    78
+Abbreviate "n't ";                          !    95x 5, saved   279
+Abbreviate "ing ";                          !   139x 4, saved   272
+Abbreviate "have";                          !    56x 4, saved   106
+Abbreviate "ight";                          !    42x 4, saved    78
+Abbreviate "ound";                          !    43x 4, saved    80
+Abbreviate " to ";                          !   222x 4, saved   438
+Abbreviate "You ";                          !   114x 5, saved   336
+Abbreviate " you";                          !    57x 4, saved   108
+Abbreviate "ed.";                           !    35x 4, saved    64
+Abbreviate "ent";                           !    60x 3, saved    57
+Abbreviate "ake";                           !    61x 3, saved    58
+Abbreviate "ing";                           !   108x 3, saved   105
 Abbreviate " a ";                           !   144x 3, saved   141
-Abbreviate "ed.";                           !    41x 4, saved    76
-Abbreviate "ll ";                           !    74x 3, saved    71
-Abbreviate "ing";                           !   141x 3, saved   138
-Abbreviate "and";                           !   105x 3, saved   102
-Abbreviate " be";                           !    72x 3, saved    69
-Abbreviate "ent";                           !    67x 3, saved    64
-Abbreviate "'s ";                           !    60x 4, saved   114
-Abbreviate " wh";                           !    62x 3, saved    59
-Abbreviate "out";                           !    63x 3, saved    60
-Abbreviate " in";                           !    97x 3, saved    94
-Abbreviate " it";                           !    92x 3, saved    89
+Abbreviate "re ";                           !    91x 3, saved    88
+Abbreviate "the";                           !    50x 3, saved    47
+Abbreviate "and";                           !   104x 3, saved   101
+Abbreviate ". I";                           !    40x 5, saved   114
+Abbreviate "ll ";                           !    80x 3, saved    77
+Abbreviate " be";                           !    84x 3, saved    81
 Abbreviate "ver";                           !    76x 3, saved    73
-Abbreviate "ed ";                           !   108x 3, saved   105
-Abbreviate "ly ";                           !    69x 3, saved    66
-Abbreviate "ear";                           !    69x 3, saved    66
-Abbreviate "re ";                           !    89x 3, saved    86
+Abbreviate "'s ";                           !    80x 4, saved   154
 Abbreviate ".^^";                           !    20x 6, saved    74
-Abbreviate " hi";                           !    44x 3, saved    41
-Abbreviate ", ";                            !   127x 3, saved   124
-Abbreviate ". ";                            !   193x 3, saved   190
-Abbreviate "e.";                            !    88x 3, saved    85
+Abbreviate " in";                           !   131x 3, saved   128
+Abbreviate "ter";                           !    71x 3, saved    68
+Abbreviate "ly ";                           !    69x 3, saved    66
+Abbreviate "ed ";                           !   108x 3, saved   105
+Abbreviate "ear";                           !    67x 3, saved    64
+Abbreviate "ion";                           !    56x 3, saved    53
+Abbreviate ". ";                            !   152x 3, saved   149
+Abbreviate "e.";                            !    91x 3, saved    88
+Abbreviate ", ";                            !   130x 3, saved   127
 
 Constant Story "Tin Star";
 Constant Headline "^Kenneth Johnson trilogy #2^Copyright (c) 2025 Gianluca Girelli and Garry Francis^https://bdb-project.itch.io^Type ABOUT for further info and credits.^^";
@@ -113,8 +115,8 @@ Array UUID_ARRAY string "UUID://01f08399-607b-41c2-9878-dddb31a25de0//";
 #Ifdef UUID_ARRAY;
 #Endif;
 
-Release 2;
-!Serial "YYMMDD";
+Release 3;
+Serial "251014";
 
 !Inform 6 constants
 Constant DEATH_MENTION_UNDO;
@@ -155,6 +157,9 @@ Constant MSG_UNLOCK_KEY_DOESNT_FIT 1005;
 !Game-specific constants
 Constant SOME "some";
 Constant YOUR "your";
+Constant ABOUT_ANYTHING_YOURE_SEEKING " about anything you're seeking or anything he mentions that sounds important.";
+Constant APACHES_BUT_THEYRE_TOO_NUMEROUS " the Apaches, but they're too numerous and overwhelm you. Your scalp will soon become a warrior's ornament.";
+Constant CANT_TAKE_HORSE_THAT_WAY "You can't take the horse that way. You'll have to leave him behind.";
 Constant CANTEEN_IS_EMPTY "The canteen is empty.";
 Constant CANYON_PREVENTS_PROGRESS "The huge rock walls of the canyon prevent progress in that direction.";
 Constant COALS_ARE_STILL_WARM "The coals are still warm.";
@@ -162,19 +167,27 @@ Constant CONSTANT_DRIPPING_COMES_FROM "A constant dripping comes from ";
 Constant DESERT_DESCRIPTION "The hot summer sun of the desert reflects on the golden sea of burning sand. The desert extends in every direction, but you can't get your bearings, because the landscape is so similar wherever you turn.";
 Constant DESTINY_LIES_TO_SOUTH "Your destiny lies to the south.";
 Constant FIRST_OPENING_CANTEEN "(first opening the canteen)^";
+Constant LEAVE_YOUR_HORSE_HERE_SO_YOU_CAN "Leave your horse here so that you can ";
 Constant LISTEN_OR_DROP_ITEM "Try listening or dropping an item in each tunnel to make it unique.";
+Constant LOOKS_LIKE_GOOD_PLACE_TO "This looks like a good place to ";
+Constant MAKE_SURE_YOU_ASK "Make sure you ask the ";
 Constant MINE_DESCRIPTION "You're lost in an intricate network of mining tunnels. There appears to be tunnels in every direction, but they're quickly swallowed up by the darkness. In the silence of the mine, you hear a constant dripping.";
 Constant MOUNT_HORSE_BEFORE_GOING "Mount your horse before going ";
 Constant NO_WATER_HERE "There's no water here.";
+Constant SUNLIGHT_SHINES_IN_FROM_SOUTH "Sunlight shines in from the entrance to the south.";
+Constant THIRSTY_SO_LEAD_TO_WATER " thirsty, so you'll need to lead him to water.";
+Constant UNTIE_ROPE_BEFORE_PUTTING "You'll have to untie the rope before you can put it ";
+Constant YOU_CAN_DRINK_FROM "You can drink water or drink from the ";
 Constant YOU_CANT_DRINK_FROM "You can't drink from ";
 Constant YOU_EMPTY_CANTEEN "You empty the canteen and the water soaks into the ground. That was probably a silly thing to do.";
-Constant YOU_NEED_FIREARM "You'd need a firearm if you want to shoot anything.";
+Constant YOU_FILL_CANTEEN "You fill the canteen with water.";
 Constant YOU_NEED_LIGHT_SOURCE "You'll need a light source to map the tunnels.";
 Constant YOU_NEED_TO_RIDE_HORSE "It's a wide open range that way and too far to walk. You'll need to ride your horse.";
-Constant YOU_CANT_SHOOT_ANYTHING_WITH "Very funny. You can't shoot anything with ";
-Constant YOU_FILL_CANTEEN "You fill the canteen with water.";
+Constant YOU_NOW_FEEL_REFRESHED " After what you've been through in the desert, you now feel refreshed.";
+Constant YOUVE_ALREADY_CUT_THEM "You've already cut them.";
 
 !Replaced actions
+Replace _UpdateDarkness;
 Replace DrinkSub;
 Replace GoSub; !Delete if diagonal directions are used
 Replace LockSub;
@@ -218,7 +231,7 @@ Attribute horsey;
     if (boards in room31)
       "^You can see cracks of light to the south. You wouldn't have been able to see them if you had a lit torch with you.";
     else
-      "^Sunlight shines in from the entrance to the south.";
+      "^", (string)SUNLIGHT_SHINES_IN_FROM_SOUTH;
 ];
 
 [ LibraryMessages p_msg p_arg_1 p_arg_2;
@@ -371,7 +384,7 @@ has pluralname scenery;
 Object horse "horse" room01
 with
   article "your",
-  name 'horse' 'stallion',
+  name 'horse' 'stallion' 'your' 'faithful',
   description
   [;
     print "He's your faithful stallion";
@@ -404,12 +417,12 @@ with
       }
     Go:
       if (player in self && self hasnt general)
-        "Your horse refuses to move. He only does that when he's thirsty, so you'll need to lead him to water.";
+        "Your horse refuses to move. He only does that when he's", (string)THIRSTY_SO_LEAD_TO_WATER;
       destination = location.(direction_properties_array->selected_direction_index);
       if (destination ofclass Object)
       {
         if (destination has door || destination hasnt horsey)
-          "You can't take the horse that way. You'll have to leave him behind.";
+          print_ret (string)CANT_TAKE_HORSE_THAT_WAY;
         if (player notin self && ((location == room11 && selected_direction == s_to) || (location == room12 && selected_direction == n_to)))
           rfalse;
         if (player notin self && ((location == room19 && selected_direction == s_to) || (location == room20 && selected_direction == n_to)))
@@ -426,7 +439,7 @@ with
       if (noun == canteen && canteen has open && water in canteen && horse hasnt general)
       {
         remove water;
-        "With great difficulty, you try to pour the water into your horse's mouth and he tries to lap it up, but you spill most of it. The canteen is now empty and your horse is still thirsty, so you'll need to lead him to water.";
+        "With great difficulty, you try to pour the water into your horse's mouth and he tries to lap it up, but you spill most of it. The canteen is now empty and your horse is still", (string)THIRSTY_SO_LEAD_TO_WATER;
       }
   ],
   before
@@ -445,7 +458,7 @@ with
       {
         if (destination has door || destination hasnt horsey)
         {
-          print "You can't take the horse that way. You'll have to leave him behind.^";
+          print (string)CANT_TAKE_HORSE_THAT_WAY, "^";
           return 2;
         }
       }
@@ -538,9 +551,9 @@ with
       remove end_of_rope;
       "You drop the end of the rope, so that your horse will no longer follow you.";
     Insert:
-      "You'll have to untie the rope before you can put it in anything.";
+      print_ret (string)UNTIE_ROPE_BEFORE_PUTTING, "in anything.";
     PutOn:
-      "You'll have to untie the rope before you can put it on anything.";
+      print_ret (string)UNTIE_ROPE_BEFORE_PUTTING, "on anything.";
     Take:
       if (end_of_rope in player)
         "You're already holding the rope.";
@@ -617,9 +630,7 @@ with
       }
       give self ~light;
       "You blow the flame out. That was pretty silly.";
-    Take:
-      "The coals in the campfire are too hot to take.";
-    Touch:
+    Take, Touch:
       "The coals in the campfire are too hot to touch.";
   ],
 has pluralname static;
@@ -635,7 +646,7 @@ with
   [;
     print "It's an Indian blanket decorated with beautiful geometric designs. It's useful to shield yourself from the cold desert nights and to make smoke signals, should the need arise.";
     if (self has general)
-      print " It now smells like a barbeque.";
+      print " It now smells like a barbecue.";
     "";
   ],
   before
@@ -645,7 +656,7 @@ with
       if (self hasnt general)
         "a bit musty.";
       else
-        "like a barbeque, since you used it to send smoke signals.";
+        "like a barbecue, since you used it to send smoke signals.";
   ],
 has;
 
@@ -807,7 +818,7 @@ Object pemmican "pemmican" saddle_bag
 with
   article "some",
   name 'pemmican',
-  description "A pressed cake of pounded dried meat mixed to a paste with melted fat and other ingredients. It's a Native American food.",
+  description "It's a pressed cake of pounded dried meat mixed to a paste with melted fat and other ingredients. It's a Native American food.",
   before
   [;
     Eat:
@@ -834,7 +845,7 @@ with
   before
   [;
     Drink:
-      "You can drink water or drink from the canteen, but you can't drink the canteen itself. That wouldn't fit down your throat.";
+      print_ret (string)YOU_CAN_DRINK_FROM, "canteen, but you can't drink the canteen itself. That wouldn't fit down your throat.";
     DrinkFrom:
       if (self hasnt open)
       {
@@ -901,10 +912,16 @@ with
       give bulk_water general;
       StopDaemon(room02);
       remove self;
-      "You drink from the canteen until all the water is gone. After what you've been through in the desert, you feel so refreshed.";
+      "You drink from the canteen until all the water is gone.", (string)YOU_NOW_FEEL_REFRESHED;
     Empty:
       remove water;
       print_ret (string)YOU_EMPTY_CANTEEN;
+    Give:
+      if (self in canteen)
+        <<Give canteen second>>;
+    Show:
+      if (self in canteen)
+        <<Show canteen second>>;
     Take:
       "If you want to take the water out of the canteen, just empty it.";
   ],
@@ -936,11 +953,11 @@ with
   [;
     Hint:
       if (bulk_water hasnt general)
-        "This looks like a good place to have a drink.";
+        print_ret (string)LOOKS_LIKE_GOOD_PLACE_TO, "have a drink.";
       if (horse hasnt general)
-        "This looks like a good place to water your horse.";
+        print_ret (string)LOOKS_LIKE_GOOD_PLACE_TO, "water your horse.";
       if (TestScope(canteen) && water notin canteen)
-        "This looks like a good place to fill your canteen.";
+        print_ret (string)LOOKS_LIKE_GOOD_PLACE_TO, "fill your canteen.";
     Swim:
       "The water isn't deep enough for swimming.";
   ],
@@ -979,7 +996,7 @@ with
   before
   [;
     Drink:
-      "You can drink water or drink from the basin, but you can't drink the basin itself, as that's part of the landscape.";
+      print_ret (string)YOU_CAN_DRINK_FROM, "basin, but you can't drink the basin itself, as that's part of the landscape.";
     DrinkFrom:
       <<Drink bulk_water self>>;
   ],
@@ -1000,7 +1017,7 @@ with
         "You don't really need another drink right now, so you just take a sip.";
       give self general;
       StopDaemon(room02);
-      "You kneel on the ground and take a deep drink of water. After what you've been through in the desert, you now feel refreshed.";
+      "You kneel on the ground and take a deep drink of water.", (string)YOU_NOW_FEEL_REFRESHED;
     Take:
       if (second == nothing && canteen in player)
       {
@@ -1117,15 +1134,8 @@ with
     Burn:
       if (self has light)
         "It's already lit.";
-      if (second == nothing && torch in player)
-      {
-        print "(with the torch)^";
-        second = torch;
-      }
-      if (second == nothing)
-        "You'll have to tell me what to light it with.";
-      if (second ~= torch or fire or makeshift_fire or coals or campfire)
-        "You can't light the dynamite with ", (ThatOrThose)second, ".";
+      if (CantBeBurned())
+        rtrue;
       if (self in player)
         "Are you crazy? You'd better drop the dynamite before lighting it unless you want to meet your maker.";
       if (location ~= room26)
@@ -1359,7 +1369,7 @@ with
   [;
     Hint:
       if (room16 hasnt visited && (player in horse || end_of_rope in player))
-        "Leave your horse here so that you can descend into the crevasse. He won't run away.";
+        print_ret (string)LEAVE_YOUR_HORSE_HERE_SO_YOU_CAN, "descend into the crevasse. He won't run away.";
       if (room16 hasnt visited)
         "What's at the bottom of the crevasse?";
   ],
@@ -1456,12 +1466,7 @@ with
   [;
     Hint:
       if (ties has scenery)
-      {
-        print "Free the man from his bonds, but you'll need something sharp.";
-        if (knife notin nothing)
-          print " You've found what you need.";
-        "";
-      }
+        "Free the man from his bonds, but you'll need something sharp.";
       if (man hasnt general)
       {
         print "Try reviving the man";
@@ -1471,7 +1476,7 @@ with
       }
       if (branches hasnt moved)
         "Those dead branches may come in handy.";
-      "Make sure you ask the man about anything you're seeking or anything he mentions that sounds important.";
+      print_ret (string)MAKE_SURE_YOU_ASK, "man", (string)ABOUT_ANYTHING_YOURE_SEEKING;
   ],
 has horsey light;
 
@@ -1496,15 +1501,8 @@ with
     Burn:
       if (location ~= room22)
         "You'd better save those branches for later.";
-      if (second == nothing && torch in player)
-      {
-        print "(with the torch)^";
-        second = torch;
-      }
-      if (second == nothing)
-        "You need an open flame to light the branches.";
-      if (second ~= torch)
-        "You can't burn the branches with ", (ThatOrThose)second, ".";
+      if (CantBeBurned())
+        rtrue;
       if (self in player)
         "Maybe you should drop the branches, first. You don't want to turn into a torch yourself.";
       move self to limbo;
@@ -1569,6 +1567,9 @@ with
       }
     Attack:
       "Don't be silly. What has the man done to hurt you?";
+    Give:
+      if (noun == canteen)
+        <<Revive self>>;
     Talk:
       "~I will forever be grateful to you for saving me. If I can help you in any way, just ask me about something.~";
     WakeOther:
@@ -1587,6 +1588,10 @@ with
       move rifle to player;
       remove water;
       "You move the man out of the direct sunlight, then help him to drink the water out of the canteen until the canteen is empty. After a few minutes, he's regained his senses. He squints at you in the sunlight and smiles. Your gesture has clearly earned you his eternal gratitude.^^~Thank you, my friend. I do not know how to repay you. Ah! I see that you're unarmed.~ He disappears behind the rocks and reappears with a rifle. At first, you think he's going to shoot you, but he gives you the rifle.^^~I'd hidden this before being attacked by a group of bandits. I see from your tin star that you're a sheriff. If you can find those bandits, this rifle may come in handy. Before the bandits surprised me, I noticed some smoke signals from Mescalero Apaches above the plateau to the east. The bandits headed that way. Be careful and good luck, my friend.~";
+    Shoot:
+      if (CantBeShot())
+        rtrue;
+      "You're a lawman, not a murderer. Surely you wouldn't shoot an innocent man with his own rifle.";
   ],
 has animate;
 
@@ -1621,9 +1626,15 @@ with
   ],
   before
   [;
+    Burn:
+      if (self hasnt scenery)
+        print_ret (string)YOUVE_ALREADY_CUT_THEM;
+      if (CantBeBurned())
+        rtrue;
+      "You would burn the man's hands and feet. Try something else.";
     Cut:
       if (self hasnt scenery)
-        "You've already cut them.";
+        print_ret (string)YOUVE_ALREADY_CUT_THEM;
       if (second == nothing && knife in player)
       {
         print "(with the knife)^";
@@ -1633,14 +1644,14 @@ with
         "You'll have to tell me what to cut them with.";
       if (second ~= knife)
         "You'll need something sharper than ", (a)second, ".";
-      give ties ~scenery;
+      give self ~scenery;
       give stake ~scenery static;
-      "You cut the leather ties with the knife and they fall to the ground. The man is barely alive, but you'd better revive him, before it's too late.";
+      "You cut the leather ties with the knife and they fall to the ground. The man is barely alive. You'd better revive him, before it's too late.";
     Untie:
       if (self has scenery)
         "After shrinking in the hot sun, they're too tight to untie.";
       else
-        "You've already cut them, so there's no need to untie them.";
+        print_ret (string)YOUVE_ALREADY_CUT_THEM;
 
   ],
 has pluralname scenery;
@@ -1655,9 +1666,9 @@ with
 has;
 
 !========================================
-! Room 18: In Front of Teepee
+! Room 18: In Front of Tipi
 !========================================
-Object room18 "In Front of Teepee"
+Object room18 "In Front of Tipi"
 with
   description "You find yourself in a barren pocket of land that is sheltered by the mountains to the west. A light breeze stirs the sparse tufts of grass that cover the area. The exit from here is to the north.",
   n_to room13,
@@ -1668,7 +1679,7 @@ with
         "The old Indian looks like he could be a chief, except that he's not wearing a war bonnet.";
       if (branch in player)
         "This would be a good place to light the branch.";
-      "Make sure you ask the old Indian about anything you're seeking or anything he mentions that sounds important.";
+      print_ret (string)MAKE_SURE_YOU_ASK, "old Indian", (string)ABOUT_ANYTHING_YOURE_SEEKING;
     Listen:
       "You hear the crackling of the burning fire.";
   ],
@@ -1693,16 +1704,16 @@ with
 has scenery;
 
 !----------------------------------------
-! Teepee
+! Tipi
 !----------------------------------------
-Object "teepee" room18
+Object "tipi" room18
 with
   name 'teepee' 'tepee' 'tipi' 'conical' 'tent' 'smoke' 'flaps' 'animal' 'skins' 'framework' 'of' 'wooden' 'poles' 'flap' 'doorway',
-  description "The tepee is a conical tent with smoke flaps at the top. It's made of animal skins sewn together and stretched over a framework of wooden poles. It's actually quite a marvel of human engineering. The flap over the doorway faces to the east so that it catches the morning sun.",
+  description "The tipi (also spelt tepee or teepee) is a conical tent with smoke flaps at the top. It's made of animal skins sewn together and stretched over a framework of wooden poles. It's actually quite a marvel of human engineering. The flap over the doorway faces to the east so that it catches the morning sun.",
   before
   [;
     Enter:
-      "You know not to enter a teepee without being invited. As you haven't been invited, you decide to stay outside.";
+      "You know not to enter a tipi without being invited. As you haven't been invited, you decide to stay outside.";
   ],
 has static;
 
@@ -1786,11 +1797,15 @@ with
       if (noun == headdress)
         "~Ah, you found headdress. I lost it somewhere. Couldn't find it.~ He puts his arms out, as though he's expecting you to give it to him.";
     Talk:
-      "The old man looks at you with a puzzled face. He probably doesn't speak English very well. Try asking him about something more specific.";
+      "The old man looks at you with a puzzled face. He probably doesn't speak English very well. Try asking him about something specific.";
   ],
   before
   [;
-    Cut, Shoot:
+    Cut:
+      <<Attack self>>;
+    Shoot:
+      if (CantBeShot())
+        rtrue;
       <<Attack self>>;
   ],
 has animate transparent;
@@ -1857,12 +1872,7 @@ with
         "There's a rattlesnake blocking the path and the path is too narrow to find a way around it.";
     Hint:
       if (rattlesnake hasnt general)
-      {
-        print "You need to get past that rattlesnake, but you'll need a weapon to dispatch it.";
-        if (rifle notin nothing)
-          print " You've found what you need.";
-        "";
-      }
+        "You need to get past that rattlesnake, but you'll need a weapon to dispatch it.";
   ],
 has horsey light;
 
@@ -1899,15 +1909,8 @@ with
   before
   [;
     Shoot:
-      if (second == nothing && rifle in player)
-      {
-        print "(with the rifle)^";
-        second = rifle;
-      }
-      if (second == nothing)
-        print_ret (string)YOU_NEED_FIREARM;
-      if (second ~= rifle)
-        print_ret (string)YOU_CANT_SHOOT_ANYTHING_WITH, (a)second, ".";
+      if (CantBeShot())
+        rtrue;
       if (self has general)
         "The snake is already dead, so don't waste bullets. You'll need them when you find the bandits.";
       give self general;
@@ -2039,7 +2042,7 @@ with
   [;
     Hint:
       if (player in horse && room24 hasnt visited)
-        "Leave your horse here so that you can cross the bridge. He won't run away.";
+        print_ret (string)LEAVE_YOUR_HORSE_HERE_SO_YOU_CAN, "cross the bridge. He won't run away.";
   ],
 has horsey light;
 
@@ -2163,24 +2166,17 @@ with
       "The Apaches stare at you. If they understand what you're saying, then they certainly don't want to reply.";
     Attack:
       deadflag = 1;
-      "You attack the Apaches, but they are too numerous. Your scalp will soon become a warrior's ornament.";
+      "You attack", (string)APACHES_BUT_THEYRE_TOO_NUMEROUS;
     Talk:
       "~Go away, white man. You're not welcome here.~";
   ],
   before
   [;
     Shoot:
-      if (second == nothing && rifle in player)
-      {
-        print "(with the rifle)^";
-        second = rifle;
-      }
-      if (second == nothing)
-        "You would need a firearm to shoot them.";
-      if (second ~= rifle)
-        "Shooting the Apaches with ", (the)second, " would be just as effective as shooting them with a pop gun, except that you haven't got a pop gun.";
+      if (CantBeShot())
+        rtrue;
       deadflag = 1;
-      "You open fire on the Apaches, but they are too numerous and overwhelm you. Your scalp will soon become a warrior's ornament.";
+      "You open fire on", (string)APACHES_BUT_THEYRE_TOO_NUMEROUS;
   ],
 has animate pluralname;
 
@@ -2427,7 +2423,7 @@ with
   [;
     print (string)MINE_DESCRIPTION;
     if (boards notin self)
-      print " Sunlight shines in from the entrance to the south.";
+      print " ", (string)SUNLIGHT_SHINES_IN_FROM_SOUTH;
     "";
   ],
   n_to room29,
@@ -2447,13 +2443,7 @@ with
       if (location == thedark)
       {
         if (boards in self)
-        {
-          print "Have you examined the cracks of light? You should be able to chop your way through those boards";
-          if (hatchet hasnt moved)
-            ", but you'll need something sharp.";
-          else
-            ". You've found what you need.";
-        }
+          "Have you examined the cracks of light? You should be able to chop your way through those boards.";
         print_ret (string)YOU_NEED_LIGHT_SOURCE;
       }
       print_ret (string)LISTEN_OR_DROP_ITEM;
@@ -2484,7 +2474,7 @@ with
         "You can't very well break through the boarded-up entrance with ", (a)second, ".";
       remove self;
       give real_location light;
-      "You chop away at the boards with the hatchet until you've created a new entrance to the south.^";
+      "You chop away at the boards with the hatchet until you've created a new entrance to the south.";
     Attack, Push:
       if (second == hatchet)
         <<Cut self second>>;
@@ -2507,6 +2497,7 @@ with
       "You can't go south, since the bridge has been destroyed.";
     return room33;
   ],
+  d_to "You carefully climb down the side of the gorge using the destroyed bridge as a sort of ladder. However, the bridge stops a long way short of the bottom of the gorge, so you climb back up again.",
   in_to room31,
   before
   [;
@@ -2525,6 +2516,11 @@ Object "gorge" room32
 with
   name 'edge' 'of' 'deep' 'gorge' 'steep' 'side' 'sides',
   description "The gorge is deep, with steep sides, so don't try climbing down or you'll surely fall to your death.",
+  before
+  [;
+    Climb, Enter:
+      "Do you have a death wish?";
+  ],
   found_in room32 room33,
 has scenery;
 
@@ -2551,7 +2547,7 @@ with
   before
   [;
     Climb, Enter:
-      "You carefully climb down the side of the gorge using the destroyed bridge as a sort of ladder. However, the bridge stops a long way short of the bottom of the gorge, so you climb back up again.";
+      <<Go FAKE_D_OBJ>>;
   ],
   found_in room32 room33,
 has static;
@@ -2562,7 +2558,7 @@ has static;
 Object "cluster of trees" room32
 with
   name 'cluster' 'of' 'tree' 'trees',
-  description "Some very high trees grow close to the edge of the gorge. Maybe cutting one down could help you to cross it.",
+  description "Some very high trees grow close to the edge of the gorge.",
   before
   [;
     Climb:
@@ -2613,12 +2609,6 @@ with
   description "You're on the south side of a gorge in the middle of a group of enormous rocks. The tree you felled is lodged in between the rocks, so it makes a stable bridge across the gorge if you want return to the north. Otherwise, you can head south.",
   n_to room32,
   s_to room34,
-  before
-  [;
-    Hint:
-      if (room34 hasnt visited)
-        "Head towards the south.";
-  ],
 has light;
 
 !----------------------------------------
@@ -2678,15 +2668,15 @@ has scenery;
 !========================================
 Object room35 "Road to Pueblo"
 with
-  description "You find yourself on a road that you know leads north to an abandoned village, or 'pueblo' in Spanish. Unlike the clearing to the west, the road shows recent hoofprints heading to the north, but none heading to the south, so the bandits must have headed north.",
+  description "You find yourself on a road that you know leads north to an abandoned village, or 'pueblo' in Spanish. Unlike the clearing to the west, the road shows recent hoof prints heading to the north, but none heading to the south, so the bandits must have headed north.",
   n_to room36,
-  s_to "The hoofprints head north, so you should head that way.",
+  s_to "The hoof prints head north, so you should head that way.",
   w_to room34,
   before
   [;
     Hint:
       if (room36 hasnt visited)
-        "Follow the hoofprints.";
+        "Follow the hoof prints.";
   ],
 has light;
 
@@ -2696,7 +2686,7 @@ has light;
 Object "road" room35
 with
   name 'road',
-  description "The road heads north and south, but the hoofprints head to the north, so that must be the way the bandits went.",
+  description "The road heads north and south, but the hoof prints head to the north, so that must be the way the bandits went.",
 has scenery;
 
 !----------------------------------------
@@ -2709,20 +2699,28 @@ with
 has scenery;
 
 !----------------------------------------
-! Hoofprints
+! Hoof prints (floating object)
 !----------------------------------------
-Object "hoofprints" room35
+Object "hoof prints"
 with
-  name 'hoofprints' 'hoof' 'prints' 'tracks',
-  description "The hoofprints head to the north. On closer inspection, you estimate that there are four horses, so presumably four bandits.",
-has scenery;
+  name 'hoof' 'print' 'prints' 'hoofprint' 'hoofprints' 'track' 'tracks',
+  description
+  [;
+    print "The hoof prints ";
+    if (self in room35)
+      "head to the north. On closer inspection, you estimate that there are four horses, so presumably four bandits.";
+    else
+      "come from the south, are clustered around the hitching rails, then head to the east.";
+  ],
+  found_in room35 room36,
+has pluralname scenery;
 
 !========================================
 ! Room 36: Abandoned Pueblo
 !========================================
 Object room36 "Abandoned Pueblo"
 with
-  description "You're in the abandoned pueblo. A few bare white buildings are scattered about, their black windows staring at you like empty eye sockets staring out of a skull. The place is silent. There's no sign of the bandits apart from footprints leading in and out of the building to the north and hoofprints heading east. It looks like they stayed here, then moved on, but there's nothing to the east, so they're sure to be back. You can either wait here or head back south along the road.",
+  description "You're in the abandoned pueblo. A few bare white buildings are scattered about, their black windows staring at you like empty eye sockets staring out of a skull. The place is silent. There's no sign of the bandits apart from footprints leading in and out of the building to the north and hoof prints heading east. It looks like they stayed here, then moved on, but there's nothing to the east, so they're sure to be back. You can either wait here or head back south along the road.",
   n_to
   [;
     if (rifle notin player)
@@ -2771,15 +2769,6 @@ Object "footprints" room36
 with
   name 'footprint' 'footprints',
   description "They haven't been blown away by the wind, so they must be very recent. You can distinguish at least three or four different boot prints, so there must be several bandits.",
-has scenery;
-
-!----------------------------------------
-! Hoofprints
-!----------------------------------------
-Object "hoofprints" room36
-with
-  name 'hoofprint' 'hoofprints',
-  description "The hoofprints come from the south, are clustered around the hitching rails, then head to the east.",
 has scenery;
 
 !----------------------------------------
@@ -2928,19 +2917,12 @@ Object bandits "bandits in the street" !room37
 with
   article "a group of",
   name 'band' 'group' 'of' 'bandits',
-  description "Those are the bandits you were looking for.",
+  description "These are the bandits you've been looking for.",
   before
   [;
     Shoot:
-      if (second == nothing && rifle in player)
-      {
-        print "(with the rifle)^";
-        second = rifle;
-      }
-      if (second == nothing)
-        "You don't have a firearm.";
-      if (second ~= rifle)
-        "You can't shoot them with ", (a)second, ".";
+      if (CantBeShot())
+        rtrue;
       deadflag = 2;
       "Hiding behind the broken window, you fire on the bandits and pick them off one by one. The bandits look around in confusion to see where the gunfire is coming from. By the time they realise the source of the ambush, they're all dead. Justice has been served. No one will mourn for those animals.^^Congratulations, sheriff! Once again, the law triumphs. The people of Tucson who lost family and friends to these scum will always remember your bravery when it came to tracking down these criminals.";
   ],
@@ -2977,6 +2959,51 @@ Object limbo;
 !========================================
 ! Other routines
 !========================================
+[ _UpdateDarkness p_silent _ceil _old_darkness _darkness;
+  if (location == thedark)
+    _old_darkness = true;
+  _ceil = ScopeCeiling(player);
+  if (_LookForLightInObj(_ceil, _ceil) == false)
+    _darkness = true;
+  if (_darkness ~= _old_darkness)
+    scope_modified = true;
+  if (_darkness)
+    location = thedark;
+  else
+    location = real_location;
+  if (_darkness ~= _old_darkness && p_silent == false)
+  {
+    new_line;
+    <Look>;
+  }
+];
+
+[ CantBeBurned;
+  if (second == nothing && torch in player)
+  {
+    print "(with the torch)^";
+    second = torch;
+  }
+  if (second == nothing)
+    "You need an open flame to ", (address)verb_word, " ", (the)noun, ".";
+  if (second ~= torch or fire or makeshift_fire or coals or campfire)
+    "You can't ", (address)verb_word, " ", (the)noun, " with ", (the)second, ".";
+  rfalse;
+];
+
+[ CantBeShot;
+  if (second == nothing && rifle in player)
+  {
+    print "(with the rifle)^";
+    second = rifle;
+  }
+  if (second == nothing)
+    "You don't have a firearm.";
+  if (second ~= rifle)
+    "You can't shoot ", (the)noun, " with ", (a)second, ".";
+  rfalse;
+];
+
 [ LowerCase c; ! for ZSCII matching ISO 8859-1
   switch (c)
   {
@@ -3038,6 +3065,15 @@ Extend 'blow'
   * 'out' noun -> Extinguish
   * noun 'out' -> Extinguish;
 
+Extend 'climb'
+  * 'up' -> Ascend
+  * 'up' noun -> Ascend
+  * 'down' -> Descend
+  * 'down' noun -> Descend
+  * 'in'/'into'/'on'/'onto'/'through' noun -> Enter
+  * 'off'/'out' noun -> Exit
+  * 'off'/'out' 'of' noun -> Exit;
+
 Extend 'cut' first
   * noun 'with' held -> Cut;
 
@@ -3054,7 +3090,14 @@ Extend 'fill' first
   * noun 'with' noun -> FillWith;
 
 Extend 'get' first
+  * 'down' -> Descend
+  * 'up' -> Exit
   * noun 'with'/'in' noun -> Take;
+
+Extend 'give' replace
+  * noun 'to' creature -> Give
+  * creature noun -> Give reverse
+  * 'over' noun 'to' creature -> Give;
 
 Extend only 'kill' replace
   * noun -> Kill
@@ -3097,6 +3140,10 @@ Extend 'unlock' first
 Verb meta 'about' 'info'
   * -> About;
 
+Verb 'ascend'
+  * -> Ascend
+  * noun -> Ascend;
+
 Verb meta 'credits'
   * -> Credits;
 
@@ -3104,6 +3151,10 @@ Verb 'cross' = 'enter';
 
 Verb 'dance'
   * -> Dance;
+
+Verb 'descend'
+  * -> Descend
+  * noun -> Descend;
 
 Verb 'dismount'
   * -> Exit
@@ -3170,8 +3221,12 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
 ! Actions
 !========================================
 [ AboutSub;
-  print "This game is adapted from a semi-graphic Italian adventure written by Bonaventura Di Bello using The Quill and Illustrator. It was originally published by Edizioni Hobby S.r.l. as 'Kenneth Johnson: Tin Star' on the cover tape of 'Viking', no. 5, May 1987 for the ZX Spectrum and Commodore 64.^^The data was extracted from the C64 version using UnQuill, translated to English and rewritten for a modern audience with the original author's permission. The new version includes many enhancements that weren't in the original. The coding was done using Inform 6 and the PunyInform library.^^";
+  print "This game is an adaptation of the Italian adventure 'Kenneth Johnson: Tin Star' by Bonaventura Di Bello. It was originally written  using The Quill and Illustrator and published by Edizioni Hobby S.r.l. on the cover tape of 'Viking', no. 5, May 1987 for the ZX Spectrum and Commodore 64.^^The data was extracted from the C64 version using UnQuill, translated to English and rewritten for a modern audience with the original author's permission. The new version includes many enhancements that weren't in the original. The coding was done using Inform 6 and the PunyInform library.^^";
   <<Credits>>;
+];
+
+[ AscendSub;
+  <<Go FAKE_U_OBJ>>;
 ];
 
 [ AskAboutSub x count npc;
@@ -3188,28 +3243,32 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
 ];
 
 [ CreditsSub;
-  "Original story and map by Gentili Gian Paolo.^Adaptation and programming by Bonaventura Di Bello.^Technical support by Max Di Bello.^English translation and game skeleton by Gianluca Girelli.^Game redesign and coding by Gianluca Girelli and Garry Francis.^Play testing by Charles Moore Jr, Garry Francis, Jade J Aincioa, Piergiorgio D'Errico, R J Kowalski and Robert Eggleston.";
+  "Original story and map by Gian Paolo Gentili.^Adaptation and programming by Bonaventura Di Bello.^Technical assistance by Max Di Bello.^English translation and game skeleton by Gianluca Girelli.^Game redesign and coding by Gianluca Girelli and Garry Francis.^Play testing by Charles Moore Jr, Jade J Aincioa, Piergiorgio D'Errico, R J Kowalski and Robert Eggleston.";
 ];
 
 [ DanceSub;
   "This is not the time or place for dancing.";
 ];
 
+[ DescendSub;
+  <<Go FAKE_D_OBJ>>;
+];
+
 [ DrinkSub;
   if (ObjectIsUntouchable(noun))
-    return;
+    rtrue;
   "You can't drink ", (ThatOrThose)noun, ".";;
 ];
 
 [ DrinkFromSub;
   if (ObjectIsUntouchable(noun))
-    return;
+    rtrue;
   print_ret (string)YOU_CANT_DRINK_FROM, (ThatOrThose)noun, ".";;
 ];
 
 [ ExtinguishSub;
   if (ObjectIsUntouchable(noun))
-    return;
+    rtrue;
   "You can't extinguish ", (ThatOrThose)noun, ".";
 ];
 
@@ -3221,11 +3280,10 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
   if (noun == nothing)
     "You'll have to tell me what to fire.";
   if (ObjectIsUntouchable(noun))
-    return;
+    rtrue;
   "You'll have to tell me what to fire at.";
 ];
 
-!Delete GoSub if diagonal directions are used
 [ GoSub _prop;
   if (selected_direction == ne_to or nw_to or se_to or sw_to)
     "There are no diagonal directions in this game.";
@@ -3238,7 +3296,7 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
 ];
 
 [ HelpSub;
-  "Tell me what to do using simple commands starting with a verb.^^Use LOOK (or L) to refresh the location description. Identify all the objects in the description and EXAMINE (or X) each one. Read responses carefully for hints.^^Use compass directions (N, S, E, W, U and D) to move around. Draw a map as you go.^^Use GET or TAKE to take objects and DROP to drop them again. Use WEAR to wear things like clothing and REMOVE to remove anything that's currently worn. Use INVENTORY (or I) to see what you're carrying and wearing.^^Use AGAIN (or G) to repeat the last command.^^Use UNDO to undo the last command if you make a mistake.^^Use SAVE to save the game and RESTORE to restore it again.^^There are over 100 verbs that you can use, so if something doesn't work, try a different verb or a different way of doing things. Use HINT if you get stuck.^^For full instructions, see the game page at <https://bdb-project.itch.io/tin-star>.";
+  "Tell me what to do using simple commands starting with a verb.^^Use LOOK (or L) to refresh the location description. Identify all the objects in the description and EXAMINE (or X) each one. Read responses carefully for hints.^^Use compass directions (N, S, E, W, U and D) to move around. Draw a map as you go.^^Use GET or TAKE to take objects and DROP to drop them again. Use WEAR to wear things like clothing and REMOVE to remove anything that's currently worn. Use INVENTORY (or I) to see what you're carrying and wearing.^^Use AGAIN (or G) to repeat the last command.^^Use UNDO to undo the last command if you get killed, make a mistake or want to try something different.^^Use SAVE to save the game and RESTORE to restore it again.^^There are over 100 verbs that you can use, so if something doesn't work, try a different verb or a different way of doing things. Use HINT if you get stuck.^^For full instructions, see the game page at <https://bdb-project.itch.io/tin-star>.";
 ];
 
 [ HintSub;
@@ -3249,7 +3307,7 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
 
 [ LockSub k;
   if (ObjectIsUntouchable(noun))
-    return;
+    rtrue;
   if (noun hasnt lockable)
   {
     PrintMsg(MSG_LOCK_NOT_A_LOCK, 'lock');
@@ -3289,16 +3347,11 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
   if (noun == nothing)
     "You point your finger in the air and say, ~Bang!~";
   if (ObjectIsUntouchable(noun))
-    return;
-  if (second == nothing && rifle in player)
-  {
-    print "(with the rifle)^";
-    second = rifle;
-  }
-  if (second == nothing)
-    print_ret (string)YOU_NEED_FIREARM;
-  if (second ~= rifle)
-    print_ret (string)YOU_CANT_SHOOT_ANYTHING_WITH, (a)second, ".";
+    rtrue;
+  if (CantBeShot())
+    rtrue;
+  if (noun == player)
+    "Are you feeling suicidal?";
   "You can't just go around shooting things arbitrarily, especially in the Wild West. Choose your target carefully or it might get you killed.";
 ];
 
@@ -3349,13 +3402,13 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
   if (noun == nothing)
     "You need to be more specific.";
   if (ObjectIsUntouchable(noun))
-    return;
+    rtrue;
   <<Enter noun>>;
 ];
 
 [ ReadSub;
-  if (ObjectIsUntouchable(noun, true))
-    "I suppose you read tea leaves, too.";
+  if (ObjectIsUntouchable(noun))
+    rtrue;
   "There's nothing legible on ", (ThatOrThose)noun, ".";
 ];
 
@@ -3372,7 +3425,7 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
   if (consult_words == 1 && NextWord() == 'xyzzy' or 'plover' or 'plugh' or 'yoho')
     <<MagicWord>>;
   if (AfterRoutines())
-    return;
+    rtrue;
   "Nothing happens.";
 ];
 
@@ -3388,7 +3441,7 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
 
 [ UnlockSub k;
   if (ObjectIsUntouchable(noun))
-    return;
+    rtrue;
   if (noun hasnt lockable)
   {
     PrintMsg(MSG_UNLOCK_NOT_A_LOCK, 'unlock');
@@ -3423,13 +3476,13 @@ Verb 'xyzzy' 'plover' 'plugh' 'yoho'
   if (noun == nothing)
     "What do you want to untie?";
   if (ObjectIsUntouchable(noun))
-    return;
+    rtrue;
   "You can't untie ", (ThatOrThose)noun, ".";
 ];
 
 [ UseSub;
   if (ObjectIsUntouchable(noun))
-    return;
+    rtrue;
   "You'll have to be more explicit than that.";
 ];
 
