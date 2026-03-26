@@ -1,0 +1,2504 @@
+!% -~S
+!% $OMIT_UNUSED_ROUTINES=1
+!% $ZCODE_LESS_DICT_DATA=1
+!% $MAX_ABBREVS=96
+!========================================
+! Tin Star
+! Kenneth Johnson trilogy #2
+! Copyright © 2025 Garry Francis & Gianluca Girelli
+!========================================
+!Constant DEBUG;
+
+Abbreviate ". ";
+Abbreviate ", ";
+Abbreviate " the ";
+Abbreviate "You";
+Abbreviate "The glaring sun turns it into a sea of gold";
+Abbreviate "'s no richness here - only death.";
+Abbreviate "you";
+Abbreviate " th";
+Abbreviate "The";
+Abbreviate " an";
+Abbreviate " to";
+Abbreviate "ing";
+Abbreviate " be";
+Abbreviate " of";
+Abbreviate "Relentless.";
+Abbreviate " can";
+Abbreviate " horse";
+Abbreviate " st";
+Abbreviate " bandits";
+Abbreviate " already";
+Abbreviate " need";
+Abbreviate " have";
+Abbreviate "It's";
+Abbreviate " so";
+Abbreviate "Mescalero";
+Abbreviate " he";
+Abbreviate " lo";
+Abbreviate " are";
+Abbreviate " from";
+Abbreviate " see";
+Abbreviate " with";
+Abbreviate " smoke signals";
+Abbreviate "'re";
+Abbreviate "int";
+Abbreviate " tie";
+Abbreviate " gr";
+Abbreviate " water";
+Abbreviate " not";
+Abbreviate " la";
+Abbreviate " mo";
+Abbreviate " fir";
+Abbreviate " direction";
+Abbreviate " is";
+Abbreviate " back";
+Abbreviate " de";
+Abbreviate " it";
+Abbreviate " branch";
+Abbreviate " don't";
+Abbreviate " su";
+Abbreviate "and";
+Abbreviate "ther";
+Abbreviate "tion";
+Abbreviate "'t ";
+Abbreviate "ter";
+Abbreviate "ed ";
+Abbreviate "oun";
+Abbreviate "hat ";
+Abbreviate "canteen";
+Abbreviate "eser";
+Abbreviate "is ";
+Abbreviate "ead";
+Abbreviate "ateau";
+Abbreviate "over";
+Abbreviate "an ";
+Abbreviate "th ";
+Abbreviate "ock";
+Abbreviate "e a ";
+Abbreviate "old ";
+Abbreviate "e w";
+Abbreviate "eat Plains";
+Abbreviate "ess";
+Abbreviate ".^^";
+Abbreviate "'s ";
+Abbreviate "ans";
+Abbreviate "_to/";
+Abbreviate "all";
+Abbreviate "ich ";
+Abbreviate "'ll";
+Abbreviate "ot ";
+Abbreviate "e l";
+Abbreviate "e b";
+Abbreviate "Tucson";
+Abbreviate "for";
+Abbreviate "ten";
+Abbreviate "Sierr";
+Abbreviate "fir";
+Abbreviate "in ";
+Abbreviate "hor";
+Abbreviate "ould";
+Abbreviate "areful";
+Abbreviate "open";
+Abbreviate "hen";
+Abbreviate "tor";
+Abbreviate "ill";
+Abbreviate " no";
+Abbreviate " in";
+
+Constant Story "Tin Star";
+#Ifv5;
+Zcharacter table + '@{A9}'; !Add copyright symbol
+Constant Headline "^Kenneth Johnson trilogy #2^Copyright @{A9} 2025 Garry Francis & Gianluca Girelli^https://bdb-project.itch.io/tin-star^Type ABOUT for further info and credits.^^";
+#Ifnot;
+Constant Headline "^Kenneth Johnson trilogy #2^Copyright (c) 2025 Garry Francis & Gianluca Girelli^https://bdb-project.itch.io/tin-star^Type ABOUT for further info and credits.^^";
+#Endif;
+
+Array UUID_ARRAY string "UUID://01f08399-607b-41c2-9878-dddb31a25de0//";
+#Ifdef UUID_ARRAY;
+#Endif;
+
+Release 1;
+Serial "250629";
+
+!Inform 6 constants
+Constant DEATH_MENTION_UNDO;
+Constant MAX_CARRIED = 10;
+Constant NO_SCORE;
+
+!PunyInform constants
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant OPTIONAL_EXTENDED_VERBSET;
+Constant OPTIONAL_FULL_DIRECTIONS;
+#Ifv5;
+Constant OPTIONAL_PROVIDE_UNDO;
+#Endif;
+Constant RUNTIME_ERRORS 0;!0 for release, 2 for debug
+
+!PunyInform static messages
+Constant MSG_COMMENT_NO_TRANSCRIPT "Comment recorded. Use SCRIPT ON to save future comments in a transcript.^";
+Constant MSG_COMMENT_TRANSCRIPT "Comment recorded.^";
+Constant MSG_DIG_NO_USE "You have better things to do than dig for buried treasure.";
+Constant MSG_PARSER_NO_INPUT "You need to enter a command.";
+Constant MSG_PARSER_UNKNOWN_VERB "That's not a verb I recognise.";
+!Constant MSG_PRAY_DEFAULT "You pray that you can find your wife and daughter and they're unharmed.";
+Constant MSG_SHOUT_DEFAULT "~Yeehaa!~";
+Constant MSG_SING_DEFAULT "~Oh give me a home where the buffalo roam,^Where the deer and the antelope play,^Where seldom is heard a discouraging word,^And the skies are not cloudy all day.~";
+Constant MSG_SMELL_DEFAULT "The only thing you can smell is yourself. You haven't had a bath for days.";
+Constant MSG_SORRY_DEFAULT "Oh, don't apologise.";
+Constant MSG_WAIT_DEFAULT "Time passes...";
+Constant MSG_SWIM_DEFAULT "Swimming requires water. Take a look around. Do you see any water here?";
+Constant MSG_THINK_DEFAULT "Think Kenneth, think. There must be a way to track those bandits down.";
+
+!PunyInform dynamic messages
+Constant MSG_CLOSE_NOT_OPEN 1000;
+Constant MSG_LOCK_ALREADY_LOCKED 1001;
+Constant MSG_LOCK_CLOSE_FIRST 1002;
+Constant MSG_LOCK_KEY_DOESNT_FIT 1003;
+Constant MSG_UNLOCK_ALREADY_UNLOCKED 1004;
+Constant MSG_UNLOCK_KEY_DOESNT_FIT 1005;
+
+!Replaced actions
+Replace GoSub; !Delete if diagonal directions are used
+Replace LockSub;
+Replace UnlockSub;
+
+Include "globals.h";
+Include "ext_cheap_scenery.h";
+
+!Game-specific constants
+Constant YOUR "your";
+Constant SOME "some";
+Constant DESERT_DESCRIPTION "The hot summer sun of the desert reflects on the golden sea of burning sand. The desert extends in every direction, but you can't get your bearings, because the landscape is so similar wherever you turn.";
+Constant EERILY_QUIET "The desert is eerily quiet.";
+Constant LOST_IN_DESERT "The desert holds many secrets. Examine it and follow what you find there. Listen can also help, sometimes.";
+
+!Game-specific variables
+Attribute horsey;
+Global p_has_eaten = false;  !player has eaten pemmican
+Global p_has_drunk = false;  !player has drunk water
+Global h_has_drunk = false;  !horse has drunk water
+
+!========================================
+! Entry point routines
+!========================================
+[ LibraryMessages p_msg p_arg_1 p_arg_2;
+  switch (p_msg)
+  {
+    MSG_CLOSE_NOT_OPEN:
+      print_ret (CTheyreOrIts)noun, " already closed.";
+    MSG_LOCK_ALREADY_LOCKED:
+      print_ret (CTheyreOrIts)noun, " already locked.";
+    MSG_LOCK_CLOSE_FIRST:
+      "You'll have to close ", (ItOrThem)noun, " first.";
+    MSG_LOCK_KEY_DOESNT_FIT:
+      print_ret (The)second, " ", (DoesntOrDont)second, " fit the lock.";
+    MSG_UNLOCK_ALREADY_UNLOCKED:
+      print_ret (CTheyreOrIts)noun, " already unlocked.";
+    MSG_UNLOCK_KEY_DOESNT_FIT:
+      print_ret (The)second, " ", (DoesntOrDont)second, " fit the lock.";
+  }
+  p_arg_1 = p_arg_2;
+];
+
+Include "puny.h";
+
+!========================================
+! Initialisation
+!========================================
+[ Initialise;
+  location = room04;
+  lookmode = 2;
+  move clothes to player;
+  no_implicit_actions = true;
+  player.description = PlayerDescription;
+
+  "Where the West begins, where the Great Plains stretch between the Mississippi-Missouri River and the Rocky Mountains, the tin star is the very symbol of the law, and the men who carry it challenge every day the violence and cunning of outlaws with no past and no future.^^After the violence of a group of criminals had almost taken away the life of your wife and daughter, you decided to become one of these ~marshals~.^^For a few years, your life passed quietly and your duties as sheriff were limited to short missions, like escorting outlaws to the state prisons. But one day, the tranquility of Tucson was shattered by the arrival of a group of dangerous bandits whose faces had long decorated the walls of many Union offices. The Bank was their target, and your absence, due to an official mission in El Paso, was their ace in the hole. They arrived shooting and shouting, spreading death and fear everywhere and taking away all the savings of the people of Tucson. Some citizens had fallen under the blows of the bandits and their friends had not even had the chance to bring the bodies back to the city.^^Unable to stand this, you saddled your horse and, after taking with you water, food and ammunition, you set off into the night in pursuit of the bandits, only to fall in their trap. When you woke up, the sun was already high, and hatred and desperation had grown inside you. Your horse was only a few dozen yards away, but you could not reach it, because the bandits had tied your hands and feet. An ordinary man would have ended up slowly dying of thirst under the torrid summer sun, but you are not an ordinary man, and you will soon prove it!^";
+];
+
+!========================================
+! Classes
+!========================================
+Class OpenContainer
+with
+  invent
+  [;
+    if (inventory_stage == 2 && children(self) == 0)
+      rtrue;
+  ],
+has container open;
+
+!========================================
+! Inventory
+!========================================
+!----------------------------------------
+! Clothes
+!----------------------------------------
+Object clothes "clothes"
+with
+  article YOUR,
+  name 'clothes' 'garments' 'shirt' 'tin' 'star',
+  description "You are the sheriff of Tucson and dressed accordingly. Most notable is the tin star on your shirt.",
+  before
+  [;
+    Disrobe:
+      "You'd better not. You need your clothes to protect you from the blazing desert sun.";
+  ],
+has clothing pluralname worn;
+
+!========================================
+! Room 1: Desert
+!========================================
+Object room01 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    if ((horse in self) && h_has_drunk == false)
+    {
+      h_has_drunk = true;
+      print "As soon as the horse spots the basin, he drinks until his strength is restored. The horse can now be mounted.^^";
+    }
+    print_ret (string)DESERT_DESCRIPTION;
+  ],
+  n_to room02,
+  s_to room07,
+  e_to room02,
+  w_to room06,
+  before
+  [;
+    Swim:
+      "As much as you would love that, you're not here for leisure.";
+    Listen:
+      "The sound of running water is soothing.";
+  ],
+  cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!----------------------------------------
+! Desert (floating object)
+!----------------------------------------
+Object "desert"
+with
+  name 'desert' 'expanse' 'ocean' 'of' 'fiery' 'sandy' 'landscape',
+  description
+  [;
+    print "The desert is harsh and unforgiving, and hot as Hell itself. ";
+    if (location == room04)
+      "It's huge, hopeless and deadly. The road peters out to the west.";
+    if (hoof_prints in location)
+      "You see a faint trace of hoof prints in the sand, possibly left by the bandits you are chasing.";
+    else
+      "The sun-baked soil is too hard to detect any hoof prints.";
+  ],
+  each_turn
+  [;
+    switch (random(50))
+    {
+      1: "^A vulture flies high in the sky. It may have spotted a dead horse nearby.";
+      2: "^A coyote barks somewhere in the distance.";
+      3: "^A cloud of desert insects hovers briefly in the air, then flies off.";
+      4: "^The silence of the desert is unnerving.";
+      5: "^The heat is stifling.";
+      6: "^The sun is relentless.";
+      7: "^You wipe the sweat from your brow.";
+      8: "^You feel a trickle of perspiration running down your back.";
+      9: "^Some sort of bug scitters across the parched desert in front of you, then it's gone.";
+      10: "^The hot sun beats down on you.";
+    }
+  ],
+  found_in room01 room02 room03 room04 room06 room07 room08 room11 room12 room13 room17,
+  !found_in room01 room02,
+has scenery;
+
+!----------------------------------------
+! Hoof prints (floating object)
+!----------------------------------------
+Object hoof_prints "hoof prints"
+with
+  name 'faint' 'trace' 'of' 'hoof' 'print' 'prints' 'track' 'tracks',
+  description
+  [;
+    print "You see a faint trace of hoof prints heading ";
+    switch (location)
+    {
+      room01: "south and west.";
+      room02: "west then south.";
+      room03: "west.";
+      room04: "west.";
+      room06: "east.";
+      room07: "north. An even fainter trace leads east, but it could be an old one.";
+      room08: "west.";
+      room11: "south, although there is a confused mass of tracks around the overturned wagon before heading off in that direction.";
+      room12: "north.";
+      room13: "north then east.";
+      room17: "south. Now that the ground is firmer, you can see that they were left by a group of horses. They are still fresh, so they likely belong to the bandits you are chasing.";
+    }
+  ],
+  found_in room01 room02 room03 room04 room06 room07 room08 room11 room12 room13 room17,
+has scenery;
+
+!----------------------------------------
+! Basin of water
+!----------------------------------------
+Object basin "basin of water" room01
+with
+  name 'basin' 'tufts' 'grass',
+  description "It's a basin of clear water surrounded by tufts of grass. It looks very refreshing in this desert environment.",
+has static;
+
+!----------------------------------------
+! Water
+!----------------------------------------
+Object water "water" room01
+with
+  name 'water',
+  found_in room01 room22,
+  before
+  [;
+    Drink:
+      if (p_has_drunk == false)
+      {
+        p_has_drunk = true;
+        room03.turns_active = 0; 
+        StopDaemon(room03);
+        print "You kneel on the ground and take a drink of water. After what you've been through in the desert, you feel so refreshed.";
+        if ((player hasnt general) && (p_has_eaten == true))
+        {
+          give player general;
+          print " You feel your strength coming back.";
+        }
+      "";
+      }
+      else "You don't need to drink again.";
+    Take:
+      if (canteen notin player)
+        "You need a container to put it in; something like a canteen so that it doesn't splash all over the place.";
+      print "(with the canteen)^";
+      if (canteen has general)
+        "The canteen is already full.";
+      give canteen general;
+      "You fill the canteen with water from the basin.";
+    ],
+has scenery;
+
+!========================================
+! Room 2: Desert
+!========================================
+Object room02 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    print_ret (string)DESERT_DESCRIPTION;
+  ],
+  n_to room02,
+  s_to room01,
+  e_to room07,
+  w_to room01,
+  before
+  [;
+    Hint:
+      print_ret (string)LOST_IN_DESERT;
+    Listen:
+      "The sound of water seems to come from the south and from the west.";
+  ],
+  cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!========================================
+! Room 3: Desert
+!========================================
+Object room03 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    print_ret (string)DESERT_DESCRIPTION, " To the east, the enormous walls of a canyon mark the edge of the desert and the beginning of the road to Tucson.";
+  ],
+  n_to room03,
+  s_to room03,
+  e_to room04,!Conditional
+  w_to room08,
+  each_turn [; StartDaemon(self); ],
+	  turns_active,
+	  daemon [;
+			if (p_has_drunk == false) {
+        switch (++(self.turns_active)) {
+          9: "^The heat is unbearable... and your throat is starting to get dry, too dry.";
+          14: "^You're exhausted... if you don't drink some water you'll soon collapse.";
+          16: "^You need to drink. Now!";
+          19: self.turns_active = 0; 
+              StopDaemon(self); 
+              deadflag = 1;
+              "^Your vision blurs, and everything begins to disappear covered by a heavy black veil... you collapse on the burning desert sand...soon you'll be food for the vultures. (The desert is unforgiving. Try RESTART instead of UNDO.)";
+        }
+      }
+		],
+    cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless."
+    1 'canyon' "The typical landscape of the Arizona desert. It's indeed beautiful, but you have other things to do rather than sightseeing.",
+has horsey light;
+
+!========================================
+! Room 4: Huge Rock Walls
+!========================================
+Object room04 "Huge Rock Walls"
+with
+  description "Huge rock walls without any support extend from east to west. To the west you can see the desert expanse and to the east, beyond the walls of the canyon, the road to Tucson.",
+  w_to room03,!Conditional
+  cant_go "Right now, you need to chase those bandits. They fled towards the west.",
+  cheap_scenery
+    3 'huge' 'rock' 'walls' "They are too steep to be climbed."
+    1 'sun' "Hot. Relentless."
+    1 'canyon' "The typical landscape of the Arizona desert. It's indeed beautiful, but you have other things to do rather than sightseeing.",
+  before
+  [;
+    Go:
+      if (rope has static)
+        "You can't go anywhere while you're tied up with that rope.";
+    Hint:
+      if (rope has static)
+        "The rope can be burned, if you manage to rekindle the fire.";
+      "You need to find those bandits, so proceed to the west.";
+    Listen:
+      print_ret (string)EERILY_QUIET;
+  ],
+has horsey light;
+
+!----------------------------------------
+! Horse
+!----------------------------------------
+Object horse "horse" room04
+with
+  article "your",
+  name 'horse' 'stallion',
+  short_name
+  [;
+    if (tied_rope in self)
+    {
+      print "horse with a rope tied to it";
+      rtrue;
+    }
+  ],
+  description
+  [;
+    print "He's your faithful stallion";
+    if (tied_rope in self)
+      print " who currently has a rope tied to him";
+    ".";
+  ],
+  react_before
+  [ destination;
+    if (player notin self && end_of_rope notin player)
+      rfalse;
+    if (player in self && action == ##Examine)
+      rfalse;
+    if (player in self && noun ~= nothing && CommonAncestor(player, noun) == location)
+        "You can't reach ", (the)noun, " while you're sitting on your horse.";
+    Drop:
+      if (player in self && noun in player && noun hasnt worn)
+      {
+        move noun to location;
+!        scope_modified = true; !If using OPTIONAL_MANUAL_SCOPE
+        print (The)noun, " fall";
+        if (noun hasnt pluralname)
+          print "s";
+        " to the ground.";
+      }
+    Go:
+      destination = location.(direction_properties_array->selected_direction_index);
+      if (destination ofclass Object)
+      {
+        if (destination has door || destination hasnt horsey)
+          "You can't take the horse that way. You'll have to leave him behind.";
+        else
+          move self to destination;
+      }
+  ],
+  before
+  [ destination;
+    Enter:
+      if (rope has static)
+        "Aren't you still tied up?";
+      if (player hasnt general)
+         "You're too weak to mount your horse right now. You need to drink some water first.";
+      if (h_has_drunk == false)
+        "Your stallion is too weak to be mounted. He needs to have some water first.";
+    Go:
+      destination = location.(direction_properties_array->selected_direction_index);
+      if (destination ofclass Object)
+      {
+        if (destination has door || destination hasnt horsey)
+        {
+          print "You can't take the horse that way. You'll have to leave him behind.^";
+          return 2;
+        }
+        return 1;
+      }
+  ],
+  after
+  [;
+    Enter:
+      "You mount your horse.";
+    Exit, GetOff:
+      "You dismount your horse.";
+  ],
+has animate enterable supporter;
+
+!----------------------------------------
+! Rope
+!----------------------------------------
+Object rope "rope" room04
+with
+  name 'rope',
+  description
+  [;
+    print "It's a long rope";
+    if (self has static)
+      print " that ties you up";
+    ".";
+  ],
+  react_before
+  [;
+    Take:
+      if (self has static)
+        "You can't take anything while you're tied up.";
+  ],
+  before
+  [;
+    Burn:
+      !if (location ~= room04 || coals in nothing)
+      if (location ~= room04 || coals hasnt light)
+        "You don't see a source of heat intense enough to burn the rope.";
+      if (self hasnt static)
+        "Don't burn any more of it. It might come in useful.";
+      give self ~static;
+      "You edge closer to the fire and burn the rope just enough to free yourself.";
+    Tie:
+      if (second == nothing && horse in location)
+      {
+        print "(to your horse)^";
+        second = horse;
+      }
+      if (second == nothing)
+        "You'll have to tell me what to tie it to.";
+      if (second ~= horse)
+        "You can't tie the rope to ", (the)second, ".";
+      if (horse notin location)
+        "Your horse is not here.";
+      remove self;
+      move tied_rope to horse;
+      move end_of_rope to player;
+      PronounNotice(tied_rope);
+      "You tie the rope to your horse and grab the other end. He will now follow you around when you're holding the rope.";
+    Untie:
+      if (self has static)
+        "This may come as a surprise to you, but you can't untie it while you're tied up.";
+  ],
+has static;
+
+!----------------------------------------
+! Tied rope
+!----------------------------------------
+Object tied_rope "rope tied to your horse"
+with
+  name 'end' 'of' 'rope' 'tied',
+  description
+  [;
+    print "It's a short rope tied to your horse. As you're ";
+    if (end_of_rope notin player)
+      print "not ";
+    print "holding the end of the rope, your horse will ";
+    if (end_of_rope notin player)
+      print "not ";
+    "follow you.";
+  ],
+  before
+  [;
+    Drop:
+      if (end_of_rope notin player)
+        "You're not holding it.";
+      remove end_of_rope;
+      "You drop the end of the rope, so that your horse will no longer follow you.";
+    Take:
+      if (end_of_rope in player)
+        "You're already holding the rope.";
+      move end_of_rope to player;
+      "You grab the other end of the rope so that your horse will follow you.";
+    Tie:
+      "It's already tied to your horse.";
+    Untie:
+      remove self;
+      if (end_of_rope in player)
+        remove end_of_rope;
+      move rope to player;
+      PronounNotice(rope);
+      "You untie the rope from your horse, so it will no longer follow you.";
+  ],
+has scenery;
+
+!----------------------------------------
+! End of rope
+!----------------------------------------
+Object end_of_rope "end of a rope tied to your horse"
+with
+  article "the",
+has;
+
+!----------------------------------------
+! Remains of a campfire
+!----------------------------------------
+Object campfire "remains of a campfire" room04
+with
+  article "the",
+  name 'remains' 'of' 'fire' 'campfire',
+  description
+  [;
+    print "It's the remains of a campfire. ";
+    if (coals hasnt light)
+      "The coals are still warm.";
+    else
+      "There are some hot coals burning in the fire.";
+  ],
+  before
+  [;
+    Blow:
+      <<Blow coals>>;
+    Receive:
+      "You'd better not put anything in the campfire or it might get burnt.";
+  ],
+has container open static;
+
+!----------------------------------------
+! Coals
+!----------------------------------------
+Object coals "coals" campfire
+with
+  name 'coals' 'ashes',
+  description
+  [;
+    if (self hasnt light)
+      "The coals are still warm.";
+    else
+      "When you blew on the coals, a flame sparked into life and it's still burning.";
+  ],
+  before
+  [;
+    Blow:
+      if (self hasnt light)
+      {
+        give self light;
+        "You blow on the warm coals and a flame suddenly lights up.";
+      }
+      give self ~light;
+      "You blow the flame out. That was pretty silly.";
+    Take:
+      "They're too hot to take.";
+    Touch:
+      "They're too hot to touch.";
+  ],
+has pluralname static;
+
+!----------------------------------------
+! Old blanket
+!----------------------------------------
+Object blanket "old blanket" room04
+with
+  article "an",
+  name 'old' 'blanket',
+  description "It is an Indian blanket, useful to shield yourself from cold desert nights, and to make smoke signals should the need arise.",
+  invent
+  [;
+    if (inventory_stage == 2)
+      if (smoke_signals notin nothing)
+        print " (now stinking like a barbecue)";
+  ],
+has;
+
+!========================================
+! Room 5: Tunnel
+!========================================
+Object room05 "Tunnel"
+with
+  name 'tunnel',
+  description "In the darkness of the tunnel, silence gives way to a typical ticking. The gallery is threatened by dangerous water infiltrations, and the mud covering the ground confirms it. To the south, you can see the dense network of galleries you have passed through, in which silence and darkness reign.",
+  s_to room10,
+  before
+  [;
+    Listen:
+      if (noun == nothing)
+        "A faint sound seems to come from the south.";
+  ],
+has;
+
+!----------------------------------------
+! Navajo hatchet
+!----------------------------------------
+!EXAMINE GALLERIES to find this
+Object item29 "Navajo hatchet" room05
+with
+  name 'navajo' 'hatchet' 'axe' 'tomahawk',
+  description "It is single-handed axe with a straight shaft and a head made of iron.",
+  before [;
+    Take:
+      move item29 to player;
+      move large_branch to player;
+      move torch to limbo; 
+      "As you take the hatchet you slide on the mud and the torch falls in the water, extinguishing itself. You are now in the dark.";
+  ],
+has;
+
+!========================================
+! Room 6: Desert
+!========================================
+Object room06 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    print_ret (string)DESERT_DESCRIPTION;
+  ],
+  n_to room01,
+  s_to room06,
+  e_to room11,
+  w_to room17,
+  cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!========================================
+! Room 7: Desert
+!========================================
+Object room07 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    print_ret (string)DESERT_DESCRIPTION;
+  ],
+  n_to room01,
+  s_to room08,
+  e_to room02,
+  w_to room13,
+  before
+  [;
+    Hint:
+      print_ret (string)LOST_IN_DESERT;
+    Listen:
+      "The sound of water seems to come from the north.";
+  ],
+  cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!========================================
+! Room 8: Desert
+!========================================
+Object room08 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    print_ret (string)DESERT_DESCRIPTION;
+  ],
+  n_to room07,
+  s_to room12,
+  e_to room03,
+  w_to room13,
+  cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!========================================
+! Room 9: Mining Tunnels
+!========================================
+Object room09 "Mining Tunnels"
+with
+  name 'intricate' 'network' 'of' 'mining' 'tunnels',
+  description "You're lost in an intricate network of mining tunnels. You try to project the light of your crude torch far away, but the darkness of the passages swallows it up from every side. In the silence, you seem to hear a distant dripping, but you can't figure out which direction it's coming from.",
+  n_to room10,
+  s_to room14,
+  e_to room09,
+  w_to room09,
+has;
+
+!========================================
+! Room 10: Mining Tunnels
+!========================================
+Object room10 "Mining Tunnels"
+with
+  name 'intricate' 'network' 'of' 'mining' 'tunnels',
+  description [;
+    if (torch in player)
+      "You're lost in an intricate network of mining tunnels. You try to project the light of your crude torch far away, but the darkness of the tunnels swallows it from every side. In the silence, you seem to hear a distant dripping, but you can't figure out which direction it's coming from.";
+    "Now that your eyes are adapting to the darkness, you can see the outline of an exit door towards the east.";
+  ],
+  n_to room05,
+  s_to room10,
+  e_to 0,
+  w_to room09,
+  before [;
+    Listen:
+      if (noun == nothing)
+        "A distant dripping seems to come from the north.";
+  ],
+has light;
+
+!----------------------------------------
+! exit door
+!----------------------------------------
+Object fake_door " exit door" room10
+with
+  name 'exit' 'door',
+  description
+  [;
+    if (torch in player)
+      "You just see tunnels everywhere.";
+    if (self has general)
+      "You chopped it down with the Navajo hatchet, and it's not blocking your way anymore.";
+    else
+      "It is made of wood and seems to be locked from the outside. It cannot be opened. The wood is starting to rot due to the humidity of the environment.";
+  ],
+  before [;
+      Open:
+        if( self hasnt general)
+          "The door is warped and stuck, so it can't be opened. Since the wood is rotting, you might be able to cut it, should you have the right tool.";
+        "You cut it down with the hatchet, so it's already open.";
+      Attack, Cut:
+      if (self has general)
+        "You already opened your way out to the east.";
+      if (second == nothing && item29 in player)
+      {
+        print "(with the hatchet)^";
+        second = item29;
+      }
+      give self general;
+      room10.e_to = room37;
+      "Using the hatchet you just found, you chop down the door in tiny little pieces. The way out is now accessible going east.";
+  ],
+has scenery;
+
+!========================================
+! Room 37: Mining Tunnels
+!========================================
+Object room37 "Mining Tunnels"
+with
+  name 'intricate' 'network' 'of' 'mining' 'tunnels',
+  description [;
+    if (torch in player)
+      "The cave you came from is north of your position while to the south, beyond the entrance, a large open space can be spotted.";
+    "The cave you came from is north of your position while a faint light can be seen towards the south at the end of the tunnel. Is it freedom, or just the headlamp of an incoming train?";
+  ],
+  n_to room10,
+  s_to room15,
+  e_to room37,
+  w_to room37,
+  before [;
+    Listen:
+      if (noun == nothing)
+        "Faint sounds of wind and animals seem to come from the south.";
+  ],
+has light;
+
+!========================================
+! Room 11: Desert
+!========================================
+Object room11 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    print_ret (string)DESERT_DESCRIPTION;
+  ],
+  n_to room06,
+  s_to room17,
+  e_to room11,
+  w_to room17,
+  cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!----------------------------------------
+! Overturned wagon
+!----------------------------------------
+Object item15 "overturned wagon" room11
+with
+  article "an",
+  name 'overturned' 'wagon',
+  description
+    [;
+      print "This wagon was possibly used for transporting goods across the desert. ";
+      if (dynamite in nothing)
+        "It might be worth searching the wagon.";
+        else
+          "You've already searched the wagon, so it's not worth searching it again.";
+    ],
+    before
+    [;
+      Search:
+        print "You search the wagon";
+        if (dynamite in nothing)
+        {
+          move dynamite to room11;
+         " and find a stick of dynamite.";
+        }
+        ", but don't find anything of interest.";
+    ],
+has static;
+
+!----------------------------------------
+! Stick of dynamite
+!----------------------------------------
+Object dynamite "stick of dynamite"
+with
+  name 'stick' 'of' 'dynamite',
+  description 
+  [;
+    print "It's a red stick of dynamite with a long fuse. It is powerful enough to ";
+    if (room20 has visited)
+      "free the mine entrance.";
+    "blow away large chunks of rock.";
+  ],
+  before
+  [;
+    Burn:
+      if (self has light)
+        "It's already lit.";
+      if (second == nothing && torch in player)
+      {
+        print "(with the torch)^";
+        second = torch;
+      }
+      if (second == nothing)
+        "You'll have to tell me what to light it with.";
+      if (second ~= torch)
+        "You can't light the dynamite with ", (ThatOrThose)second, ".";
+      if (self in player)
+        "Are you crazy? God said the meek shall inherit the Earth, not the idiots! You'd better drop the dynamite before lighting it unless you want to meet your maker.";
+      if (location ~= room20)
+        "You only have one stick of dynamite and you can't see anything worth blowing up around here. I think you should save it until you need it.";
+      if (self notin small_hole)
+        "If you're trying to blow up the entrance of the mine, the dynamite would be more effective if it was placed in the hole. Have you examined it carefully?";
+      give self light;
+      StartTimer(self, 3);
+      "The wick of the dynamite is now burning like a sparkler. You'd better get out of here before it blows up!";
+    Blow, Extinguish:
+      if (self hasnt light)
+        "It's not lit.";
+      "Too late. You can't stop the inevitable.";
+    Take:
+      if (self has light)
+        "Are you crazy? Get out of here before it blows up!";
+  ],
+  time_out
+  [;
+    move dynamite to limbo;
+    move large_hole to room20;
+    move item17 to room20;
+    give room20 general;
+    give landslide general;
+    give mine general;
+    room20.n_to = room14;
+    room20.in_to = room14;
+    if (player in room20)
+    {
+      deadflag = 1;
+      "^KABOOM! The dynamite blows up the rocks that closed the entrance of the mine. Also, it blows up the stupid sheriff who wasn't smart enough to get out of here, despite being told to do so. St Peter is waiting for you.";
+    }
+    "^KABOOM! You hear an explosion nearby. You can now inspect the damage.";
+  ],
+  time_left 3,
+has;
+
+!========================================
+! Room 12: Desert
+!========================================
+Object room12 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    print_ret (string)DESERT_DESCRIPTION;
+  ],
+  n_to room13,
+  s_to room12,
+  e_to room08,
+  w_to room13,
+  cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!========================================
+! Room 13: Desert
+!========================================
+Object room13 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    print_ret (string)DESERT_DESCRIPTION;
+  ],
+  n_to room07,
+  s_to room12,
+  e_to room08,
+  w_to room12,
+  cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!----------------------------------------
+! Carcass of a horse
+!----------------------------------------
+Object item10 "carcass of a horse" room13
+with
+  article "the",
+  parse_name
+  [ nw i flag;
+    nw = NextWord();
+    while (nw == 'carcass' or 'of' or 'dead' or 'horse')
+    {
+      i++;
+      if (nw == 'horse' && TestScope(horse))
+        flag++;
+      nw = NextWord();
+    }
+    if (i == flag)
+      return 0;
+    return i;
+  ],
+  description 
+  [;
+    print "It's a dead horse, possibly left here by the owner while trying to cross this deadly place. It's been stripped of its harness, bridle and saddle. ";
+    if (saddle_bag hasnt moved)
+      print "Only a battered saddle bag has been left beside the carcass.";
+    "";
+  ],
+has animate neuter;
+
+!----------------------------------------
+! Saddle bag
+!----------------------------------------
+Object saddle_bag "saddle bag" room13
+with
+  name 'saddle' 'bag',
+  description
+  [;
+    print "It's an old and battered saddle bag. ";
+    <<Search self>>;
+  ],
+  before
+  [;
+    Receive:
+      if (noun ~= pemmican && noun ~= canteen)
+        print_ret (The)noun, " won't fit in the saddle bag.";
+  ],
+has container openable;
+
+!----------------------------------------
+! Pemmican
+!----------------------------------------
+Object pemmican "pemmican" saddle_bag
+with
+  article "some",
+  name 'pemmican',
+  description "A pressed cake of pounded dried meat mixed to a paste with melted fat and other ingredients. It's a Native American food.",
+  before [;
+    Eat:
+      if (p_has_drunk == false)
+        "Your mouth is too dry to eat. You need to drink some water first.";
+      else {
+        p_has_eaten = true;
+        give player general;
+        move self to limbo;
+        "You feel your strength coming back and you can now mount your horse, provided he has drunk as well.";
+      }
+  ],
+has edible;
+
+!----------------------------------------
+! Canteen
+!----------------------------------------
+Object canteen "canteen" saddle_bag
+with
+  article "a",
+  name 'canteen',
+  description
+  [;
+    print "It's a small metallic bottle, used as a small reserve of water. It's currently ";
+    if (self hasnt general)
+      "empty.";
+    else
+      "full of water.";
+  ],
+  invent
+  [;
+    if (inventory_stage == 2)
+      if (self hasnt general)
+        print " (empty)";
+      else
+        print " (full of water)";
+  ],
+  before
+  [;
+    Drink:
+      if (p_has_drunk == false)
+      {
+        p_has_drunk = true;
+        room03.turns_active = 0; 
+        StopDaemon(room03);
+        print "You drink from the canteen. After what you've been through in the desert, you feel so refreshed.";
+        if ((player hasnt general) && (p_has_eaten == true))
+        {
+          give player general;
+          print " You feel your strength coming back.";
+        }
+      "";
+      }
+      else "You drink a sip from the water out of the canteen.";
+    Empty:
+      if (self hasnt general)
+        "There's nothing in it.";
+      give self ~general;
+      "You empty the canteen and the water dissipates. A silly move to do in your current predicament.";
+    Fill:
+      if (self has general)
+        "It's already full.";
+      if (second == nothing && water in location)
+      {
+        print "(with water)^";
+        <<FillWith self water>>;
+      }
+      if (second == nothing)
+        "You'll need to tell me what to fill it with.";
+      if (second == basin && second in location)
+      {
+        give self general;
+        "You fill the canteen with water from the basin.";
+      }
+      "There's nothing here that you can use to fill the canteen.";
+    FillWith:
+      if (self has general)
+        "It's already full.";
+      if (second == water && second in location)
+      {
+        give self general;
+        "You fill the canteen with water from the basin.";
+      }
+      "There's nothing here that you can use to fill the canteen.";
+    Receive:
+      "Only water can be put in the canteen.";
+  ],
+has container openable;
+
+!========================================
+! Room 14: Large Gash in Tunnels
+!========================================
+Object room14 "Large Gash in Tunnels"
+with
+  name 'large' 'gash' 'in' 'tunnels',
+  description "The bright light of day breaks violently through the large gash produced by the dynamite, suffocated to the north and east by the dark mouth of two secondary tunnels. To the south, beyond the entrance, a large plateau extends under the summer sun.",
+  n_to room09,!Conditional
+  s_to room20,
+has light;
+
+!========================================
+! Room 15: North Side of Gorge
+!========================================
+Object room15 "North Side of Gorge"
+with
+  name 'north' 'side' 'of' 'deep' 'gorge',
+  description "When you reach the end of the tunnel, you find yourself in the open, on the edge of a deep precipice. It is the north side of a deep gorge, and on the other side you can see a group of rocks behind which smoke seems to emerge. Behind you is the entrance to the mining tunnel from which you came. A cluster of trees is adjacent to the ravine.",
+  n_to room37,
+  in_to room37,!Conditional
+  !CROSS takes you to room21
+  s_to "You cannot go south since the bridge has been destroyed.",
+has light;
+
+!----------------------------------------
+! Long bridge
+!----------------------------------------
+Object item30 "long bridge that hangs along the side of the chasm" room15
+with
+  name 'long' 'bridge',
+  description "The bridge was probably cut down by the band of outlaws, and it now hangs along this side of the chasm. It is impossible to use it, so you must find another way to get to the south side.",
+has static;
+
+!----------------------------------------
+! Cluster of trees
+!----------------------------------------
+Object trees "cluster of trees next to the edge of chasm" room15
+with
+  name 'cluster' 'tree' 'trees',
+  description "Some very high trees grow close to the edge of the chasm. Maybe cutting one down could help you to cross it.",
+  before [;
+    Cut:
+      if (item29 in player)
+        if (item31 notin nothing)
+          "You already cut a tree. There is no need to eradicate the entire forest.";
+        move item31 to room15;
+        room15.s_to = room21;
+        "With considerable difficulty you finally manage to knock down one of the tallest trees, which falls towards the other side of the ravine, forming an excellent makeshift bridge.";
+  ],
+has scenery;
+
+!----------------------------------------
+! Long log
+!----------------------------------------
+Object item31 "long log that allows you to cross the chasm" !room15
+with
+  name 'long' 'log',
+  description "A makeshift bridge formed by a tree you just choppped down.",
+has static;
+
+!========================================
+! Room 16: Inside Old Building
+!========================================
+Object room16 "Inside Old Building"
+with
+  name 'interior' 'of' 'old' 'building',
+  description "The interior of the old building shows clear signs of abandonment, but, in one corner, a small, almost extinguished fire lets out a thin wisp of smoke that disappears, high up, between the rotten beams of the ceiling. A broken window allows you to look out to monitor the situation. You can go out the building heading south.",
+  cheap_scenery
+			11 'rotten' 'beams' "There is nothing special about the beans."
+      1 'smoke' "Almost non-existent, yet present."
+      2 'extinguished' 'fire' "There is nothing special about it, except for the fact that it indicates people somewhat live here, and might be back soon.",
+  s_to room22,
+  out_to room22,
+  before [;
+    Shoot:  
+      if (rifle notin player)
+        "You have nothing you can use to shoot.";
+      if (item32 notin nothing)
+      {
+        !if (second == nothing)
+         ! "Shooting random objects will just get you killed, here.";
+        if (noun == window)
+          {
+            print "(with the rifle)^";
+            <<Shoot item32 rifle>>;
+          }
+        deadflag = 2;
+        "Hiding yourself with the window, you fire on the bandits, and with unerring aim you pick them off one by one before they have time to fire on you.^^Congratulations, sheriff!^^Once again the law triumphs, thanks to a man of valor who defends it at the cost of his own life. The people of Tucson will always remember your action.";
+      }
+      else "Save you bullets for later. There is nothing to shoot at.";
+  ],
+  each_turn [; StartDaemon(self); ],
+	  turns_active,
+	  daemon [;
+			switch (++(self.turns_active)) {
+        3: move item32 to room22;
+           "^Suddenly, you hear people laughing and screaming, almost covering the rumble of approaching horses.";
+        5: "^Looking through the window, you can see they are dismounting to water the horses.";
+        7: "^Talking in Spanish, they start joking about their carnage. Their laugh is unbearable.";
+        9: "^It looks like the bandits are almost ready to leave.";
+        10: self.turns_active = 0; 
+            StopDaemon(self); 
+            deadflag = 1;
+            "^At a certain point, the one who seems to be their boss calls everyone to attention. The bandits mount their horses again and off they go, for a new carnage. You missed your only opportunity to kill them, and the law won't be restored. Not this time, at least.";
+        }
+		],
+has light;
+
+!----------------------------------------
+! Window
+!----------------------------------------
+Object window "broken window" room16
+with
+  name 'broken' 'window',
+  before [;
+    Examine:
+     if (item32 in nothing)
+       "Looking through the window you can see the outside is clear of bandits, at the moment.";
+    else 
+    "It looks like the people you were looking for have finally arrived. Maybe you can try to shoot through the window to take them down.";
+  ],
+has scenery;
+
+!========================================
+! Room 17: Desert
+!========================================
+Object room17 "Desert"
+with
+  name 'desert',
+  description
+  [;
+    print_ret (string)DESERT_DESCRIPTION, " The desert seems to end to the south, but you can't push your gaze any further, as you are blinded by the sun.";
+  ],
+  n_to room11,
+  s_to room18,
+  e_to room11,
+  w_to room06,
+  cheap_scenery
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!========================================
+! Room 18: Sierra Sedona
+!========================================
+Object room18 "Sierra Sedona"
+with
+  name 'sierra' 'sedona',
+  description [;
+    if (self hasnt visited)
+      print "From now on you should be mounting your horse whenever possible. There is a long distance to cover.^^";
+      "Around you, for miles, is the vast Sierra Sedona. To the east, you see the deadly vastness of the desert, while to the south, the Sierra continues until it merges, in the distance, with the horizon.";
+    ],
+  n_to room17,
+  s_to room24,
+  cheap_scenery
+    2 'desert' 'expanse' "Huge, hopeless, deadly..."
+    1 'sand' "The glaring sun turns it into a sea of gold, but there's no richness here - only death."
+    1 'sun' "Hot. Relentless.",
+has horsey light;
+
+!========================================
+! Room 19: Great Plains
+!========================================
+Object room19 "Great Plains"
+with
+  name 'great' 'plains',
+  description "You have arrived in the Great Plains, where herds of bison usually find food and shelter. At present, though, you cannot spot any bison, here. To the west, in the distance, you see the Sierra Sedona, and beyond the plains, much further south, a mountain range.",
+  s_to room25,
+  w_to room24,
+has horsey light;
+
+!========================================
+! Room 20: End of Plateau
+!========================================
+Object room20 "End of Plateau"
+with
+  name 'end' 'of' 'vast' 'plateau',
+  description [;
+    print "The vast plateau ends here in front of the entrance to an old gold mine. "; 
+    if (self hasnt general)
+      print "At present you cannot enter it since a landslide has covered the only access, leaving only a small hole. ";
+    else
+      print "The way is now open, thanks to the powerful explosion.";
+    "To the south the plateau extends for a very long stretch.";
+  ],
+  s_to room26,
+  in_to, n_to "There are rocks blocking the entrance and you can't get in.",
+has light;
+
+!----------------------------------------
+! landslide
+!----------------------------------------
+Object landslide "landslide" room20
+with
+  name 'landslide',
+  description 
+  [;
+    if (self hasnt general)
+      "The landslide covers the only entrance to the old mine.";
+    "After the explsion, there is now an opening in the landslide.";
+  ],
+has scenery;
+
+!----------------------------------------
+! mine
+!----------------------------------------
+Object mine "mine" room20
+with
+  name 'mine',
+  description 
+  [;
+    if (self hasnt general)
+      "You can't enter it since a landslide covered the entrance.";
+    "After the explsion, there is now an opening in the landslide, and you can enter the mine.";
+  ],
+has scenery;
+
+!----------------------------------------
+! Small hole
+!----------------------------------------
+Object small_hole "small hole" room20
+class OpenContainer
+with
+  name 'small' 'hole' 'soil',
+  description
+  [;
+    print "It's a small hole, about the width of a candle, possibly caused by the erosion. ";
+    <<Search self>>;
+  ],
+  before
+  [;
+    Receive:
+      if (noun ~= dynamite)
+        print_ret (The)noun, " won't fit in the hole.";
+  ],
+has container open scenery;
+
+!----------------------------------------
+! Large hole in the mountain wall
+!----------------------------------------
+Object large_hole "large hole in the mountain wall"
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'large' or 'hole' or 'in' or 'the' or 'mountain' or 'wall')
+      i++;
+    return i;
+  ],
+  description "Wow. The stick of dynamite sure blew a big hole here.",
+  before
+  [;
+    Enter:
+      <<Go FAKE_N_OBJ>>;
+  ],
+has static;
+
+!----------------------------------------
+! Debris around the entrance to the mine
+!----------------------------------------
+Object item17 "debris around the entrance to the mine" !room20
+with
+  article "lots of",
+  name 'debris' 'entrance' 'to' 'mine',
+  description "A whole amount of debris; they are the result of the explosion.",
+has static;
+
+!========================================
+! Room 21: South Side of Ravine
+!========================================
+Object room21 "South Side of Ravine"
+with
+  name 'south' 'side' 'of' 'ravine',
+  description "You are on the south side of a ravine, in the middle of a group of enormous rocks. To the south, you can clearly see the smoke of a campfire, while to the north a makeshift bridge allows you to reach the other side of the chasm.",
+  n_to room15,
+  s_to room27,
+has light;
+
+!========================================
+! Room 22: In Front of White Buildings
+!========================================
+Object room22 "In Front of White Buildings"
+with
+  name 'bare' 'white' 'buildings',
+  description "Bare white buildings placed one next to the other look at you with their black windows like skulls with empty eye sockets. The place is silent, but on the ground you can distinguish numerous horse hoofprints and human footprint all around, especially in front of one of the buildings. You can get in by going north. Towards the south you go back  from where you came.",
+  in_to room16,
+  n_to room16,
+  s_to room28,
+  e_to "You are on foot, alone, and in a open range. It is better not to venture that way.",
+  cheap_scenery
+			1 'footprints' "It looks like they were left by a numerous group of people. They are pretty recent, so chances are those guys will be back soon."
+      3 'hoofprints' 'hoof' 'prints' "They were left by a group of horses, and head towards the east.",
+has light;
+
+!----------------------------------------
+! watering trough
+!----------------------------------------
+Object trough "watering trough" room22
+with 
+  name 'watering' 'horse' 'trough',
+  description [;
+    print "It is a long, shallow container from which horses drink. It's full of water";
+    "";
+    !<<Search self>>;
+  ],
+  before
+  [;
+    Receive:
+      "Only water can be put in the canteen.";
+  ],
+  has container open static;
+
+!----------------------------------------
+! hitching rails
+!----------------------------------------
+Object rails "hitching rails" room22
+with 
+  article "a couple of",
+  name 'hitching' 'rails',
+  description "Made of wood, they are horizontal rails with vertical supports to which a horse can be hitched, or tied up to.",
+has static;
+
+!----------------------------------------
+! Band of bandits on horseback
+!----------------------------------------
+Object item32 "band of bandits on horseback" !room22
+with
+  article "the",
+  name 'band' 'of' 'bandits',
+  description "Those are the bandits you were looking for.",
+  before [;
+    Shoot:
+        if (rifle notin player)
+        {
+          deadflag = 1;
+          "You do not have any weapon with you, so the bandits are the only one opening fire. Their bullets hit you multiple time and you fall mortally wounded on the ground. A blood-stained tin star is the last thing you see. And then, nothing ...";
+        }
+        if (second == nothing && rifle in player)
+        {
+          print "(with the rifle)^";
+          <<Shoot self rifle>>;
+        }
+        deadflag = 1;
+        "You try to shoot the bandits but, despite your skills and how fast you are, they are just too many. Their bullets hit you multiple times and you fall mortally wounded on the ground. A blood-stained tin star is the last thing you see. And then, nothing ...";
+  ],
+has animate pluralname;
+
+!========================================
+! Room 23: Foot of Mountain Range
+!========================================
+Object room23 "Foot of Mountain Range"
+with
+  name 'foot' 'of' 'long' 'mountain' 'range',
+  description "You have reached the foot of a long mountain range that marks the western border of the Sierra. To the south a rocky expanse disappears into the distance, while to the east you can see the immense sunny expanse of the Sierra.",
+  s_to room29,
+  e_to room24,
+has horsey light;
+
+!========================================
+! Room 24: Sierra Sedona
+!========================================
+Object room24 "Sierra Sedona"
+with
+  name 'sierra' 'sedona',
+  description "You are crossing the Sierra Sedona, which continues to the north, borders the Great Plains to the east, ends at the foot of a mountain range to the west and transforms into a barren and inhospitable region to the south.",
+  n_to room18,
+  s_to room30,
+  e_to room19,
+  w_to room23,
+has horsey light;
+
+!----------------------------------------
+! Dead tree
+!----------------------------------------
+Object tree "dead tree" room24
+with
+  name 'dead' 'tree',
+  description [;
+    print "It's an old, spooky dead tree. ";
+    if (self hasnt general)
+      "A large branch, almost completely detached, is hanging from it. ";
+    "Now that you took the branch it looks even spookier.";
+  ],
+has static supporter;
+
+!----------------------------------------
+! Large branch
+!----------------------------------------
+Object large_branch "large branch" tree
+with
+  name 'large' 'branch',
+  description "A dried-up large branch. Maybe you could use it as a torch, if needed.",
+  before
+  [;
+    Take:
+      if (self hasnt moved)
+      {
+        move self to player;
+        give tree general;
+        "You take the large branch.";
+      }
+      "You already took the large branch.";
+     
+    Burn:
+      if (location == room30 || location == 27 || (location == room04 && coals has light) || (location == room35 && makeshift_fire notin nothing))
+      {
+        move torch to parent(self);
+        move self to limbo;
+        "You light up the branch, making a crude lit torch.";
+      }
+  ],
+has;
+
+!----------------------------------------
+! Crude lit torch
+!----------------------------------------
+Object torch "crude lit torch" !room00
+with
+  name 'crude' 'lit' 'torch',
+  description "It is a simple crude lit torch. It won't last long, but for the time being it seems to hold up.",
+  before
+  [;
+    Extinguish:
+      move large_branch to parent(self);
+      move self to limbo;
+      "You blow out the torch so that it reverts back to a large branch.";
+  ],
+has light;
+
+!========================================
+! Room 25: Grassy Plains
+!========================================
+Object room25 "Grassy Plains"
+with
+  name 'green' 'grass' 'grassy' ,
+  description "The green expanse of grass sways like a sea of jade in the light breeze blowing from the south. Scanning the landscape in that direction, you see, in the distance, a plateau. To the north, the prairie extends for a long stretch.",
+  n_to room19,
+  s_to room31,
+has horsey light;
+
+!========================================
+! Room 26: Large Plateau
+!========================================
+Object room26 "Large Plateau"
+with
+  name 'large' 'plateau',
+  description "Crossing the long suspension bridge, you have reached a large plateau that extends north. To the south, beyond the rope bridge, you can see the other side of the ravine you crossed.",
+  n_to room20,!Conditional
+  s_to room32,!Conditional, also CROSS BRIDGE
+  before
+  [;
+    Go:
+      if (selected_direction == s_to && item28 in self)
+        "The Indians won't let you pass.";
+  ],
+has light;
+
+!========================================
+! Room 27: campfire among Rocks
+!========================================
+Object room27 "Campfire among Rocks"
+with
+  name 'campfire' 'among' 'rocks',
+  description "You have reached a campfire among the rocks. To the north, beyond the group of rocks you passed, a large chasm opens up. To the east, instead, you see a road to a pueblo.",
+  n_to room21,
+  e_to room28,
+has light;
+
+!========================================
+! Room 28: Road to Pueblo
+!========================================
+Object room28 "Road to Pueblo"
+with
+  name 'road',
+  description "You have set off on the road that leads north to an abandoned pueblo. To the west you can see the smoke of a campfire.",
+  n_to room22,
+  w_to room27,
+has light;
+
+!========================================
+! Room 29: Edge of Crevasse
+!========================================
+Object room29 "Edge of Crevasse"
+with
+  name 'edge' 'of' 'deep' 'natural' 'crevasse',
+  description "You have reached the edge of a deep natural crevasse. To the east opens a sandy territory, very similar to the desert, while to the north a mountain range borders the Sierra. A steep path leads down to the bottom of the crevasse.",
+  n_to room23,
+  e_to room34,
+  d_to room33,!Conditional
+has horsey light;
+
+!----------------------------------------
+! Mescalero Apaches
+!----------------------------------------
+Object item28 "Mescalero Apaches" !room26
+with
+  article "a group of",
+  name 'group' 'of' 'mescalero' 'apaches' 'indians',
+  description "This is one of the groups of Mescalero that usually raid the region. For some reason, they are not posing a direct threat to you. Unless you do something stupid.",
+  life [;
+    Attack:
+      deadflag = 1;
+      if (location == room29)
+        "You attack the Mescalero with your weapon, but they are too numerous... your scalp will soon become a warrior's ornament.";
+      if (location == room36)
+        "With savage howls the Apaches throw themselves at you... you can't even scream.";
+    Ask:
+        "The Mescalero stare at you. If they undesrtand what you are saying, they sure don't want to reply.";
+  ],
+  before [;
+      Shoot:
+        deadflag = 1;
+        if (location == room29)
+          "You open fire on the Mescalero, but they are too numerous... your scalp will soon become a warrior's ornament.";
+        if (location == room36)
+          "With savage howls the Apaches throw themselves at you... you can't even scream.";
+      Talk:
+        "~Go away, white man. You are not welcome here.~";
+  ],
+  found_in
+  [;
+    if ((location == room36) || ((location == room29) && (headdress has moved)))
+      rtrue;
+  ],
+has animate pluralname;
+
+!========================================
+! Room 30: In Front of Teepee
+!========================================
+Object room30 "In Front of Teepee"
+with
+  name 'teepee' 'tepee' 'tipi',
+  description "A light breeze stirs the sparse tufts of grass that cover the barren territory on which you find yourself. A teepee stands in the middle of the desolation of the landscape, almost as if to challenge its arid climate, and in front of it an old Indian warms himself in front of a fire singing the ancient songs of his people.",
+  n_to room24,
+  before
+  [;
+    Listen:
+      "You only hear the crackling sound made by the burning fire.";
+  ],
+has horsey light;
+
+!----------------------------------------
+! teepee
+!----------------------------------------
+Object teepee "teepee" room30
+with
+  name 'conical' 'tent' 'teepee',
+  description "This typical conical tent has seen better days. Now it's old and battered like the man who inhabits it, but it keeps standing still.",
+has static;
+
+!----------------------------------------
+! Makeshift fire
+!----------------------------------------
+Object fire "small fire that burns with a crackling sound" with
+  name 'makeshift' 'fire' 'smoke',
+  description "The fire warms you up and gives you hope. For a brief moment you wished this was all a dream, but you have to find those bandits.",
+  found_in room30 room27,
+has static;
+
+!----------------------------------------
+! The old Indian
+!----------------------------------------
+Object indian "old Indian" room30
+  with
+    article "an",
+    name 'old' 'indian' 'man',
+      description "The old man looks like someone who has stood beside his warriors in countless battles.",
+    life [;
+      Ask:
+        switch (second)
+        {
+          'apaches', 'mescalero':
+            "~They are a great danger, and an enemy of the Navajo nation. Stay away from them. They can be seen near the Plateau, and use smoke signals to communicate that everything is fine.~";
+          'bandits', 'outlaws', 'criminals':
+            "~This place is full of those bad people, but the ones you are searching are probably hiding farther east, beyond the Grassy Plains. Beware of them.~";
+          'smoke', 'signals', 'smoke signals':
+            "~A group of Mescalero will usually send smoke signals to indicate the place is free of intruders. The others will then keep a distance to search somewhere else.~";
+          default:
+            "~I don't know anything about it.~";
+        }
+      Show:
+        if (noun ~= headdress)
+          "The old indian doesn't seem interested in ", (the)noun, ".";
+      "The old indian gives a wry smile at the sight of the headdress since he knows its value.";
+      Attack:
+        "Please don't be silly.";
+      Talk:
+        "The old man looks at you with a puzzled face. He probably doesn't speak your language very well. Try asking more specific questions.";
+    ],
+  has animate;
+
+!----------------------------------------
+! Navajo knife
+!----------------------------------------
+Object knife "Navajo knife"
+with
+  name 'Navajo' 'knife',
+  description "A big and sharp Navajo knife.",
+has;
+
+!========================================
+! Room 31: Rocky Path
+!========================================
+Object room31 "Rocky Path"
+with
+  name 'rocky' 'path',
+  description "A steep, rocky path winds up to a vast plateau, blending into the green of the Great Plains to the north.",
+  n_to room25,
+  u_to room35,
+has horsey light;
+
+!========================================
+! Room 32: Rope Bridge
+!========================================
+Object room32 "Rope Bridge"
+with
+  name 'rope' 'bridge',
+  description "Below you, between the high rocky walls of the gorge, a raging torrent rushes away in a south-east direction. The fragile rope bridge sways under your weight, and you barely manage to keep your balance, as you stare, not without a little fear, into the abyss beneath your feet.",
+  n_to room26,
+  s_to room36,
+has light;
+
+!========================================
+! Room 33: Bottom of Crevasse
+!========================================
+Object room33 "Bottom of Crevasse"
+with
+  name 'bottom' 'of' 'crevasse',
+  description "The bottom of the crevasse is littered with rocks and debris, and in some places it also hosts a few stunted tufts of grass. The only way out is a steep path up.",
+  u_to room29,
+has light;
+
+!----------------------------------------
+! Navajo headdress
+!----------------------------------------
+Object headdress "Navajo headdress" room33
+with
+  name 'navajo' 'headdress',
+  description "This eagle-feather headdress, also called a war bonnet, is traditionally a symbol of power and authority reserved for highly respected Native American men. It surely belongs to a chief.",
+  before
+  [;
+    Give:
+      if (location == room30)  
+        if (noun == headdress)
+        {
+          move headdress to indian;
+          give indian general;
+          move knife to player;
+          !move item28 to room29; !Mescalero Apaches
+          "The old Indian seems happy with your offer, even if the impassivity of his wrinkled face doesn't reveal his emotions. He takes a knife from a fold in his clothing and offers it to you. You gratefully accept it.";
+        }
+      else 
+        "The headdress is an important item. Make sure to give it to the right person.";
+  ],
+has clothing;
+
+!========================================
+! Room 34: Sandy Terrain
+!========================================
+Object room34 "Sandy Terrain"
+with
+  name 'vast' 'arid' 'sandy' 'desert-like' 'terrain',
+  description "You are on a vast, arid, sandy, almost desert-like terrain. Some dry bushes roll in the wind, often getting stuck in piles of branches or in the rocks to the west, where, over the edge of a deep crevasse, you can see the peaks of the mountains.",
+  w_to room29,
+has horsey light;
+
+!----------------------------------------
+! Dead branches
+!----------------------------------------
+Object item25 "dead branches" room34
+with
+  name 'dead' 'branches',
+  description "These dead branches could come in useful to make a fire.",
+  before
+  [;
+    Burn:
+      if (location ~= room35)
+        "You'd better save those branches for later.";
+      if (torch notin player)
+        "You need an open flame to light the branches.";
+      if (self in player)
+        "Maybe you should drop the branches, first. You don't want to turn into a torch yourself.";
+      move self to limbo;
+      move makeshift_fire to room35;
+      "You light up the dead branches, making a fire that burns with a crackling sound and produces a lot of smoke.";
+  ],
+has pluralname;
+
+!----------------------------------------
+! Man tied to stake
+!----------------------------------------
+Object man "man" room34
+with
+  name 'man' 'tied' 'hand' 'and' 'foot',
+  short_name
+  [;
+    print "man";
+    if (ties has scenery)
+      print " tied to a stake";
+    rtrue;
+  ],
+  description
+  [;
+    print "This man looks like yet another victim of those criminals";
+    if (ties has scenery)
+      ". You can see that he's tied firmly to the stake by some leather ties around his hands and feet.";
+    else
+      ", but he's doing much better now that you've set him free.";
+  ],
+  before 
+  [;
+    Revive, Wake:
+      if (self has general)
+        "He's doing fine, now. There is no need to revive him again.";
+      if (ties has scenery)
+        "You should free him from those ties first.";
+      if ((canteen notin player) || (canteen hasnt general))
+        "You need to have some water to revive him.";
+      give self general;
+      move rifle to player;
+      give canteen ~general;
+      "You move the man far from direct sunlight. Then, you help him to drink until the canteen is empty. After a few minutes he is back to his senses, and your gesture has earned you the eternal gratitude of this man.^^~Thank you, my friend. I do not know how to repay you. Ah! I see that you are unarmed.~ He disappears behind the rocks and reappears with a rifle. At first, you think he's going to shoot you, but he gives you the rifle.^^~I had hidden this before being attacked by a group of bandits. I see from your tin star that you're a sheriff. If you can find those bandits, this rifle may come in handy. Before the bandits surprised me, I noticed some smoke signals from Mescalero Apaches above the plateau. The bandits headed that way. Be careful and good luck, my friend.~";
+  ],
+  life [;
+      Ask:
+        if (ties has general)
+          "Perhaps it would be better to free the poor man, first.";
+        if (self hasnt general)
+          "He is unconscious ... what about reviving him first?";
+        switch (second)
+        {
+          'apaches', 'mescalero':
+            "~They are a great danger. Stay away from them. They can be seen near the Plateau, and use smoke signals to communicate that everything is fine.~";
+          'bandits', 'outlaws', 'criminals':
+            "~The men you are looking for are possibly the same who did this to me. I head them saying their hideout is farther east, beyond the Grassy Plains. They insulted me in English, but mostly spoke in Spanish to each other.~";
+          'smoke', 'signals', 'smoke signals':
+            "~A group of Mescalero will usually send smoke signals to indicate the place is free of intruders. The others will then keep a distance to search somewhere else.~";
+          default:
+            "~I don't know anything about it.~";
+        }
+      Attack:
+        "Please don't be silly.";
+      Talk:
+        if (ties has general)
+          "Perhaps it would be better to free the poor man, first.";
+        if (self hasnt general)
+          "He is unsconscious ... what about reviving him first?";
+        "~I will forever be grateful for saving me. Do you want to ask me a specific question?~";
+    ],
+has animate;
+
+!----------------------------------------
+! Stake
+!----------------------------------------
+Object stake "stake" room34
+with
+  name 'stake',
+  description
+  [;
+    print "The stake is firmly buried into the ground. The man ";
+    if (self has scenery)
+      "is bound to it by leather ties.";
+    else
+      "was bound to it until you set him free.";
+  ],
+has scenery;
+
+!----------------------------------------
+! Ties
+!----------------------------------------
+Object ties "leather ties" room34
+with
+  name 'leather' 'ties',
+  description
+  [;
+    if (self has scenery)
+      "Those bandits used wet leather ties to tie this man to the stake. As the leather dries, the ties get shorter and cut into his flesh.";
+    else
+      "They're the leather ties that the bandits used to tie the man to the stake.";
+  ],
+  before
+  [;
+    Cut:
+      if (self hasnt scenery)
+        "You've already cut them.";
+      if (second == nothing && knife in player)
+      {
+        print "(with the knife)^";
+        second = knife;
+      }
+      if (second == nothing)
+        "You'll have to tell me what to cut them with.";
+      if (second ~= knife)
+        "You'll need something sharper than ", (a)second, ".";
+      give ties ~scenery;
+      give stake ~scenery static;
+      "You cut the leather ties with the knife and they fall to the ground. The man is barely alive, but you'd better revive him, before it's too late.";
+    Untie:
+      if (self has scenery)
+        "After shrinking in the hot sun, they're too tight to untie.";
+      else
+        "You've already cut them, so there's no need to untie them.";
+
+  ],
+has pluralname scenery;
+
+!----------------------------------------
+! Winchester rifle
+!----------------------------------------
+Object rifle "Winchester rifle"
+with
+  name 'loaded' 'winchester' 'rifle',
+  description "It's a loaded Winchester rifle. This is exactly what you need to shoot a target from a safe distance.",
+has;
+
+!========================================
+! Room 35: Plateau
+!========================================
+Object room35 "Plateau"
+with
+  name 'plateau',
+  description "You have reached the surface of a vast plateau that extends from the east to a precipice. A stony path descends to the plains.",
+  e_to room36,
+  d_to room31,!Conditional
+has horsey light;
+
+!----------------------------------------
+! Makeshift fire
+!----------------------------------------
+Object makeshift_fire "makeshift fire that burns with a crackling sound and produces a lot of smoke" !room35
+with
+  name 'makeshift' 'fire' 'smoke',
+  description "An intense smoke rises from the fire. Just what you need to make smoke signals.",
+has static;
+
+!----------------------------------------
+! Smoke signals
+!----------------------------------------
+Object smoke_signals "smoke signals"
+with
+  article SOME,
+  parse_name
+  [ nw i;
+    nw = NextWord();
+    while (nw == 'smoke' or 'signal' or 'signals')
+    {
+      i++;
+      nw = NextWord();
+    }
+    return i;
+  ],
+  description "They are the signals you made to fool the Mescalero into moving in a different region of the Plateau. Now you should be able to cross the rope bridge on the chasm.",
+  invent
+  [;
+    if (inventory_stage == 2)
+      print " (rising up in the sky)";
+  ],
+  before
+  [;
+    Make:
+      if (location ~= room35)
+        "You have no reason to send smoke signals from this location.";
+      if (self notin nothing)
+        "You've already made the smoke signals.";
+      if (makeshift_fire in nothing)
+        "You need smoke to make smoke signals, and you cannot have smoke if you haven't a fire.";
+      !if (~~TestScope(blanket))
+      if (blanket notin player)
+        "Something like a blanket woould prove useful to send those signals.";
+      if (second == nothing && blanket in player)
+      {
+        print "(with the blanket)^";
+        second = blanket;
+      }
+      move smoke_signals to location;
+      give item28 absent;
+      room36.n_to = room32;
+      "You lean down and, using the blanket, you partially cover the fire a couple of times so to send two distinctive puffs of smoke. This is the standard signal for ~all is well~ and, turning your gaze towards the east, you see the Mescalero riding away. They are gone, now, and you can proceed with your quest.";
+  ],
+has static;
+
+!========================================
+! Room 36: Edge of Chasm
+!========================================
+Object room36 "Edge of Chasm"
+with
+  name 'edge' 'of' 'wide' 'deep' 'chasm',
+  description "A wide, deep chasm opens up towards the north, at the bottom of which you can clearly see the rapids of a stream. A long, unstable rope bridge leads to the other side of the chasm. To the west, a plateau extends as far as your gaze can see.",
+  n_to "A group of Mescalero Apaches are blocking your way. You need to send them off before proceeding.",
+  w_to room35,
+has horsey light;
+
+!========================================
+! Limbo
+!========================================
+! a fictitious place where to move objects not needed anymore
+Object limbo;
+
+!========================================
+! Printing rules
+!========================================
+[ consultWord word i;
+  for (i=0:i<WordLength(word):i++)
+    print (char)LowerCase(WordAddress(word)->i);
+];
+
+[ DoesntOrDont obj;
+  if (obj has pluralname)
+    print "don't";
+  else
+    print "doesn't";
+];
+
+[ firstConsultWord word i;
+  for (i=0:i<WordLength(word):i++)
+    if (i == 0)
+      print (char)UpperCase(WordAddress(word)->i);
+    else
+      print (char)LowerCase(WordAddress(word)->i);
+];
+
+!========================================
+! Other routines
+!========================================
+[ LowerCase c; ! for ZSCII matching ISO 8859-1
+  switch (c)
+  {
+    'A' to 'Z': c = c + 32;
+    202, 204, 212, 214, 221: c--;
+    217, 218: c = c - 2;
+    158 to 160, 167, 168, 208 to 210: c = c - 3;
+    186 to 190, 196 to 200: c = c - 5 ;
+    175 to 180: c = c - 6;
+  }
+  return c;
+];
+
+[ UpperCase c; ! for ZSCII matching ISO 8859-1
+  switch (c)
+  {
+    'a' to 'z': c = c - 32;
+    201, 203, 211, 213, 220: c++;
+    215, 216: c = c + 2;
+    155 to 157, 164, 165, 205 to 207: c = c + 3;
+    181 to 185, 191 to 195: c = c + 5 ;
+    169 to 174: c = c + 6;
+  }
+  return c;
+];
+
+[ PlayerDescription;
+  print "Your name is Kenneth Johnson and you're the sheriff of Tucson. You're on the trail of the bandits that robbed the bank in Tucson. It's a dangerous undertaking, but it's your duty to catch them.";
+  if (rope has static)
+    print " You're currently tied up with a rope. You'll have to get yourself untied if you expect to catch those bandits. If you don't, you'll fry in the desert sun.";
+  if (player hasnt general)
+    print " You're dying of thirst. You need to get some water.";
+  "";
+];
+
+!========================================
+! Grammar
+!========================================
+[ isMakeable;
+  if (scope_stage == 1)
+    rfalse;!Don't allow multiple objects
+  if (scope_stage == 2)
+  {
+    PlaceInScope(smoke_signals);
+    rfalse;
+  }
+  if (scope_stage == 3)
+    "You don't know how to make that.";
+];
+
+Extend 'blow'
+  * 'on'/'onto' noun -> Blow
+  * 'out' noun -> Extinguish
+  * noun 'out' -> Extinguish;
+
+Extend 'cut' first
+  * noun 'with' held -> Cut;
+
+Extend 'drink' 
+  * 'from' held -> Drink;
+
+Extend 'fill' first
+  * noun 'with' noun -> FillWith;
+
+Extend only 'kill' replace
+  * noun -> Kill
+  * noun 'with' held -> Kill;
+
+Extend 'lock' first
+  * noun -> Lock;
+
+Extend 'look'
+  * 'into' noun -> Search
+  * 'out' noun -> Examine
+  * 'through' noun -> Examine
+  * 'behind'/'under' noun -> LookUnder;
+
+Extend only 'put'
+  * 'out' noun -> Extinguish
+  * noun 'out' -> Extinguish;
+
+Extend 'read' first
+  * noun -> Read;
+
+Extend only 'say' first
+  * topic -> Say;
+
+Extend only 'speak' replace
+  * -> Talk
+  * creature -> Talk
+  * noun -> Talk
+  * 'to'/'with' creature -> Talk
+  * 'to'/'with' noun -> Talk
+  * 'to'/'with' creature 'about' topic -> Ask
+  * 'to'/'with' noun 'about' topic -> Ask;
+
+Extend 'unlock' first
+  * noun -> Unlock;
+
+Verb meta 'about' 'info'
+  * -> About;
+
+Verb meta 'credits'
+  * -> Credits;
+
+Verb 'extinguish' 'douse' 'snuff' 'unlight'
+  * noun -> Extinguish;
+
+Verb 'fire'
+  * held -> Fire
+  * held 'at' noun -> Shoot reverse
+  * 'at' noun 'with' held -> Shoot;
+
+Verb meta 'help' 'instructions'
+  * -> Help;
+
+Verb 'hint' 'clue'
+  * -> Hint;
+
+Verb 'inspect' = 'examine';
+
+Verb 'make' 'send'
+  * scope=isMakeable -> Make
+  * scope=isMakeable 'with' held -> Make;
+
+Verb 'dismount'
+  * -> Exit
+  * creature -> Exit;
+
+Verb 'mount' 'ride'
+  * -> Mount
+  * creature -> Mount;
+
+Verb 'revive'
+  * creature -> Revive;
+
+Verb 'shoot'
+  * -> Shoot
+  * noun -> Shoot
+  * noun 'with' held -> Shoot
+  * 'at' noun -> Shoot
+  * 'at' noun 'with' held -> Shoot
+  * held 'at' noun -> Shoot reverse
+  * 'through' noun -> Shoot;
+
+Verb 'talk' 'babble' 'chat' 'communicate' 'converse' 'gab' 'gossip'
+  * -> Talk
+  * creature -> Talk
+  * noun -> Talk
+  * 'to'/'with' creature -> Talk
+  * 'to'/'with' noun -> Talk
+  * 'to'/'with' creature 'about' topic -> Ask
+  * 'to'/'with' noun 'about' topic -> Ask;
+
+Verb 'untie' 'disconnect' 'detach' 'unfasten'
+  * -> Untie
+  * noun -> Untie
+  * noun 'from' noun -> Untie;
+
+Verb 'use'
+  * noun -> Use;
+
+Verb 'xyzzy' 'plover' 'plugh' 'yoho'
+  * -> MagicWord;
+
+!========================================
+! Actions
+!========================================
+[ AboutSub;
+  print "This game is an enhanced, text-only port of the semi-graphic Italian adventure 'Kenneth Johnson: Tin Star' by Bonaventura Di Bello. It was originally written with The Quill and Illustrator and published by Edizioni Hobby S.r.l. on the cover tape of 'Viking', no. 5, May 1987 (for ZX Spectrum and C64).^^The data was extracted from the C64 version using UnQuill, translated to English and rewritten for a modern audience with the original author's permission. The coding was done using Inform 6 and the PunyInform library.^^";
+  <<Credits>>;
+];
+
+[ CreditsSub;
+  "Original story and map by Gentili Gian Paolo.^Adaptation and programming by Bonaventura Di Bello.^Technical support by Max Di Bello.^Translation to English by Garry Francis & Google Translate.^Game redesign and coding by Garry Francis & Gianluca Girelli.^Play testing by Garry Francis, Piergiorgio D'Errico, Jade, improvmonster, Robert Eggleston, and RJ Kowalski.";
+];
+
+[ ExtinguishSub;
+  if (ObjectIsUntouchable(noun))
+    return;
+  "You can't extinguish ", (ThatOrThose)noun, ".";
+];
+
+[ FillWithSub;
+  "You can't fill ", (the)noun, " with ", (ThatOrThose)second, ".";
+];
+
+[ FireSub;
+  if (noun == nothing)
+    "You'll have to tell me what to fire.";
+  if (ObjectIsUntouchable(noun))
+    return;
+  "You'll have to tell me what to fire at.";
+];
+
+!Delete GoSub if diagonal directions are used
+[ GoSub _prop;
+  if (selected_direction == ne_to or nw_to or se_to or sw_to)
+    "There are no diagonal directions in this game.";
+  _prop = selected_direction;
+#Iftrue RUNTIME_ERRORS > RTE_MINIMUM;
+  if (_prop == 0)
+    return _RunTimeError(ERR_INVALID_DIR_PROP);
+#Endif;
+  return GoDir(_prop);
+];
+
+[ HelpSub;
+  print "Tell me what to do using simple commands starting with a verb.^^Use LOOK (or L) to refresh the location description. Identify all the objects in the description and EXAMINE (or X) each one. Read responses carefully for hints.^^Use compass directions (N, S, E, W, U and D) to move around. Draw a map as you go.^^Use GET or TAKE to take objects and DROP to drop them again. Use WEAR to wear things like clothing and REMOVE to remove anything that's currently worn. Use INVENTORY (or I) to see what you're carrying and wearing.^^Use AGAIN (or G) to repeat the last command.^^";
+#Ifv5;
+  print "Use UNDO to undo the last command if you make a mistake.^^";
+#Endif;
+  "Use SAVE to save the game and RESTORE to restore it again.^^There are over 100 verbs that you can use, so if something doesn't work, try a different verb or a different way of doing things. Use HINT if you get stuck.^^For full instructions, see the game page at <https://bdb-project.itch.io/tin-star>.";
+];
+
+[ HintSub;
+  "When stuck in a maze, drop unnecessary objects to make that location unique; it'll be easier to map the maze. Examine the location carefully. You can also try to listen, in case you hear something useful.^^Groups of Apaches patrol the area and can prevent your free movement. Talk to NPCs to learn how to get rid of those patrols.";
+];
+
+[ LockSub k;
+  if (ObjectIsUntouchable(noun))
+    return;
+  if (noun hasnt lockable)
+  {
+    PrintMsg(MSG_LOCK_NOT_A_LOCK, 'lock');
+    rtrue;
+  }
+  if (noun has locked)
+  {
+    PrintMsg(MSG_LOCK_ALREADY_LOCKED);
+    rtrue;
+  }
+  if (noun has open)
+  {
+    PrintMsg(MSG_LOCK_CLOSE_FIRST);
+    rtrue;
+  }
+  k = RunRoutines(noun, with_key);
+  if (k == nothing)
+    "You can't see how to lock ", (ItOrThem)noun, ".";
+  if (second == nothing && k ~= nothing && k in player)
+  {
+    second = k;
+    print "(with ", (the)second, ")^";
+  }
+  if (second == nothing)
+    "You don't have the key.";
+  if (second ~= k)
+  {
+    PrintMsg(MSG_LOCK_KEY_DOESNT_FIT);
+    rtrue;
+  }
+  give noun locked;
+  run_after_routines_msg = MSG_LOCK_DEFAULT;
+  run_after_routines_arg_1 = 'lock';
+];
+
+[ ShootSub;
+  if (noun == nothing)
+    "You point your finger in the air and say, ~Bang!~";
+  "You can't just go around shooting things arbitrarily, especially in the Wild West. Choose your target carefully or it might get you killed.";
+];
+
+[ KillSub;
+  "You need to be more specific. Try a verb like ~shoot~.";
+];
+
+[ LookUnderSub;
+  if (location == thedark)
+    "But it's dark.";
+  "You find nothing of interest.";
+];
+
+[ MakeSub;
+  "You don't have the materials required to make ", (ThatOrThose)noun, ".";
+];
+
+[ MagicWordSub;
+  "If you're expecting a funny response to a magic word, think again.";
+];
+
+[ MountSub;
+  if (noun == nothing && horse in location)
+    noun = horse;
+  if (noun == nothing)
+    "You need to be more specific.";
+  if (ObjectIsUntouchable(noun))
+    return;
+  <<Enter noun>>;
+];
+
+[ ReadSub;
+  if (ObjectIsUntouchable(noun, true))
+    "I suppose you read tea leaves, too";
+  "There's nothing legible on ", (ThatOrThose)noun, ".";
+];
+
+[ SaySub i;
+  if (consult_words == 0)
+    "You have nothing to say.";
+  print "~";
+  i = consult_from;
+  print (firstConsultWord)i++;
+  while (i < consult_from + consult_words)
+    print " ", (consultWord)i++;
+  print ".~^^";
+  wn = consult_from;
+  if (consult_words == 1 && NextWord() == 'xyzzy' or 'plover' or 'plugh' or 'yoho')
+    <<MagicWord>>;
+  if (AfterRoutines())
+    return;
+  "Nothing happens.";
+];
+
+[ TalkSub;
+  if (noun == nothing)
+    "You start talking to no one in particular.";
+  if (noun == player)
+    "You start talking to yourself, but it's a one-sided conversation.";
+  if (RunLife(noun, ##Talk))
+    rtrue;
+  print_ret (The)noun, " ", (IsOrAre)noun, " not very talkative.";
+];
+
+[ UnlockSub k;
+  if (ObjectIsUntouchable(noun))
+    return;
+  if (noun hasnt lockable)
+  {
+    PrintMsg(MSG_UNLOCK_NOT_A_LOCK, 'unlock');
+    rtrue;
+  }
+  if (noun hasnt locked)
+  {
+    PrintMsg(MSG_UNLOCK_ALREADY_UNLOCKED, 'unlock');
+    rtrue;
+  }
+  k = RunRoutines(noun, with_key);
+  if (k == nothing)
+    "You can't see how to unlock ", (ItOrThem)noun, ".";
+  if (second == nothing && k ~= nothing && k in player)
+  {
+    second = k;
+    print "(with ", (the)second, ")^";
+  }
+  if (second == nothing)
+    "You don't have the key.";
+  if (second ~= k)
+  {
+    PrintMsg(MSG_UNLOCK_KEY_DOESNT_FIT);
+    rtrue;
+  }
+  give noun ~locked;
+  run_after_routines_msg = MSG_UNLOCK_DEFAULT;
+  run_after_routines_arg_1 = 'unlock';
+];
+
+[ UntieSub;
+  if (noun == nothing)
+    "What do you want to untie?";
+  if (ObjectIsUntouchable(noun))
+    return;
+  "You can't untie ", (ThatOrThose)noun, ".";
+];
+
+[ UseSub;
+  if (ObjectIsUntouchable(noun))
+    return;
+  "You'll have to be more explicit than that.";
+];
+
+[ ReviveSub;
+  "There is no one to revive, here.";
+];
+
+End;
