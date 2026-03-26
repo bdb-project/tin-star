@@ -19,3 +19,5 @@ This is a traditional text adventure that was written for The BDB Project. The g
 ## Release notes
 
 Release 1 was compiled with Inform 6 version 6.42 and the PunyInform library version 5.14. This was released for [ParserComp 2025](https://itch.io/jam/parsercomp-2025), but this was an accidental release of an earlier development version.
+
+Release 2 was compiled with Inform 6 version 6.42 and the PunyInform library version 5.14.1. This was the corrected version for ParserComp 2025.
